@@ -1,0 +1,98 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.happybirthday.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fromName"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/giverny_small" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Happy Birthday"
+        android:layout_alignParentRight="true"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="#FFEA00"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.5"
+        android:id="@+id/hb" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hb"
+        android:layout_alignParentRight="true"
+        android:paddingRight="8dp"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="#FFEA00"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.5"
+        android:text="Johnny"
+        android:id="@+id/toName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:rotation="-22"
+        android:paddingRight="70dp"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:textColor="#C51162"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.5"
+        android:layout_above="@id/fromName"
+        android:text="Luv Ya Always,"
+        android:id="@+id/luv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:rotation="-22"
+        android:paddingRight="70dp"
+        android:paddingBottom="75dp"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:textColor="#C51162"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.5"
+        android:text="Bobbie"
+        android:id="@+id/fromName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giverny, FR -  Monet's Garden"
+        android:textColor="@android:color/black"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="8dp"/>
+
+</RelativeLayout>
