@@ -26,45 +26,44 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="190dp">
+        android:layout_marginTop="190dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
-            android:textSize="25sp"
+            android:text="Udacity"
             android:textColor="#75aede"
-            android:text="Udacity" />
+            android:textSize="25sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:text="2465 Latham St"
             android:textColor="#75aede"
-            android:text="2465 Latham St" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:text="Mountain View, CA 94043"
             android:textColor="#75aede"
-            android:text="Mountain View, CA 94043" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:layout_weight="1"
-            android:textSize="20sp"
+            android:text="650-555-5555"
             android:textColor="#75aede"
-            android:text="650-555-5555" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
