@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Aussie Rules</string>
+
+    /* Button names */
+    <string name="goals">Goals</string>
+    <string name="behinds">Behinds</string>
+    <string name="rbehinds">Rushed Behinds</string>
+    <string name="reset">New Game</string>
+
+    /* Team Names */
+    <string name="team1">Magpies</string>
+    <string name="team2">Zebras</string>
+
+    /* Score */
+    <string name="score">0</string>
+    <string name="scoreBreakdown">-.-</string>
+
+</resources>

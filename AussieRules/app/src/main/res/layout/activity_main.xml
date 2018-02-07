@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/australian_rules_football_field"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.aussierules.MainActivity">
+
+    <Button
+        android:id="@+id/newGame"
+        android:onClick="newGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="New Game"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/newGame"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sandringham_transparent_small"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/scoreTeam1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30.0 (35)"
+                android:textStyle="bold"
+                android:textSize="35sp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/numOfTryTeam1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textSize="36sp"
+                android:layout_margin="5dp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/essendon_transparent_small"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/scoreTeam2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30.0 (35)"
+                android:textSize="35sp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/numOfTryTeam2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textSize="36sp"
+                android:layout_margin="5dp"
+                android:layout_gravity="right"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/playButton"
+        android:onClick="runPlay"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/statsTable"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/footie_transparent"
+        android:text="Run Play"/>
+
+    <TableLayout
+        android:id="@+id/statsTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="1"
+        android:layout_margin="10dp">
+        <TableRow>
+            <TextView
+                android:text="Goals"
+                android:padding="3dp" />
+            <TextView
+                android:id="@+id/goalsTeam1"
+                android:text="team1"
+                android:gravity="center"
+                android:padding="3dp" />
+            <TextView
+                android:id="@+id/goalsTeam2"
+                android:text="team2"
+                android:gravity="right"
+                android:padding="3dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Behinds"
+                android:padding="3dp" />
+            <TextView
+                android:id="@+id/behindsTeam1"
+                android:text="team1"
+                android:gravity="center"
+                android:padding="3dp" />
+            <TextView
+                android:id="@+id/behindsTeam2"
+                android:text="team2"
+                android:gravity="right"
+                android:padding="3dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Rushed Behinds"
+                android:padding="3dp" />
+            <TextView
+                android:id="@+id/rBehindsTeam1"
+                android:text="team1"
+                android:gravity="center"
+                android:padding="3dp" />
+            <TextView
+                android:id="@+id/rBehindsTeam2"
+                android:text="team2"
+                android:gravity="right"
+                android:padding="3dp" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
