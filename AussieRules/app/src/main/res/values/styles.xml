@@ -1,36 +1,110 @@
 <resources xmlns:android="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <!-- Primary theme color of the app (sets background color of app bar) -->
-        <item name="colorPrimary">#FFFFFF</item>
-        <!-- Background color of buttons in the app -->
-        <item name="colorButtonNormal">#FFFF00</item>
     </style>
 
-    <style name="teamView" parent="@android:style/TextAppearance">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">#616161</item>
-        <item name="android:typeface">sans</item>
+    <style name="teamView1" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_marginTop">-30dp</item>
+        <item name="android:layout_marginLeft">45dp</item>
+    </style>
+
+    <style name="teamView2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_marginTop">-30dp</item>
+        <item name="android:layout_marginRight">15dp</item>
     </style>
 
     <style name="scoreView" parent="@android:style/TextAppearance">
-        <item name="android:textSize">46sp</item>
-        <item name="android:textColor">#000000</item>
-        <item name="android:typeface">sans</item>
-        <item name="android:layout_marginTop">16dp</item>
-        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">20dp</item>
     </style>
 
-    <style name="buttonText" parent="@android:style/Widget">
-        <item name="android:textSize">14sp</item>
-        <item name="android:layout_margin">4dp</item>
-        <item name="android:textAllCaps">true</item>
+    <style name="logoView1" parent="@android:style/TextAppearance">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:src">@drawable/collingwood_magpies_small1</item>
     </style>
 
-    <style name="resetButton" parent="@android:style/Widget">
-        <item name="android:textSize">14sp</item>
-        <item name="android:layout_marginBottom">32dp</item>
-        <item name="android:textAllCaps">true</item>
+    <style name="logoView2" parent="@android:style/TextAppearance">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:src">@drawable/essendon_transparent_small1</item>
+    </style>
+
+    <style name="Tries" parent="android:style/TextAppearance">
+        <item name="android:textSize">100sp</item>
+        <item name="android:textColor">#0000FF</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">60dp</item>
+    </style>
+
+    <style name="teamHeader" parent="android:style/TextAppearance">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">50dp</item>
+    </style>
+
+    <style name="ballView1" parent="android:style/TextAppearance">
+        <item name="android:src">@drawable/small_ball</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="ballView2" parent="android:style/TextAppearance">
+        <item name="android:src">@drawable/small_ball</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+    </style>
+
+    <style name="playButton" parent="android:style/TextAppearance">
+        <item name="android:textColor">#CC8822</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_above">@id/statsTable</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="resetButtonBorder" parent="android:style/TextAppearance">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">#0000CC</item>
+    </style>
+
+    <style name="resetButton" parent="android:style/TextAppearance">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:background">#CC0000</item>
+        <item name="android:text">@string/reset</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="tableParent" parent="android:style/TextAppearance">
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:stretchColumns">1</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">#BB000000</item>
+    </style>
+
+    <style name="col1" parent="android:style/TextAppearance">
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="col2" parent="android:style/TextAppearance">
+        <item name="android:padding">3dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="col3" parent="android:style/TextAppearance">
+        <item name="android:padding">3dp</item>
+        <item name="android:gravity">right</item>
     </style>
 
 </resources>

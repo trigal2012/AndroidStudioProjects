@@ -1,158 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/australian_rules_football_field"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/australian_rules_football_field"
     tools:context="com.example.android.aussierules.MainActivity">
 
     <Button
-        android:id="@+id/newGame"
-        android:onClick="newGame"
+        style="@style/resetButtonBorder"
+        android:layout_width="100dp"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/reset"
+        style="@style/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:onClick="newGame" />
+
+
+    <TextView
+        android:id="@+id/numOfTries"
+        style="@style/Tries"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="New Game"/>
+        android:text="@string/tries" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/newGame"
-        android:layout_margin="10dp">
+        android:orientation="horizontal">
 
         <LinearLayout
+            style="@style/teamHeader"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:contentDescription="@string/team1">
 
             <ImageView
+                android:id="@+id/ballIconTeam1"
+                style="@style/ballView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/sandringham_transparent_small"
-                android:layout_margin="10dp"
-                android:layout_gravity="center"/>
+                android:contentDescription="@string/team1" />
+
+            <TextView
+                style="@style/teamView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team1" />
+
+            <ImageView
+                style="@style/logoView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/team1" />
 
             <TextView
                 android:id="@+id/scoreTeam1"
+                style="@style/scoreView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30.0 (35)"
-                android:textStyle="bold"
-                android:textSize="35sp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"/>
-
-            <TextView
-                android:id="@+id/numOfTryTeam1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textSize="36sp"
-                android:layout_margin="5dp"
-                android:layout_gravity="left"/>
-
+                android:text="@string/score" />
         </LinearLayout>
 
         <LinearLayout
+            style="@style/teamHeader"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_weight="1">
 
             <ImageView
+                android:id="@+id/ballIconTeam2"
+                style="@style/ballView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/essendon_transparent_small"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"/>
+                android:contentDescription="@string/team2" />
+
+            <TextView
+                style="@style/teamView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team2" />
+
+            <ImageView
+                style="@style/logoView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/team2" />
 
             <TextView
                 android:id="@+id/scoreTeam2"
+                style="@style/scoreView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30.0 (35)"
-                android:textSize="35sp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"/>
-
-            <TextView
-                android:id="@+id/numOfTryTeam2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textSize="36sp"
-                android:layout_margin="5dp"
-                android:layout_gravity="right"/>
+                android:text="@string/score" />
 
         </LinearLayout>
     </LinearLayout>
 
     <Button
         android:id="@+id/playButton"
+        style="@style/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="runPlay"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_above="@id/statsTable"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/footie_transparent"
-        android:text="Run Play"/>
+        android:text="@string/play" />
 
     <TableLayout
         android:id="@+id/statsTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:stretchColumns="1"
-        android:layout_margin="10dp">
-        <TableRow>
+        android:layout_margin="10dp"
+        android:background="#BB000000"
+        android:padding="2dp"
+        android:stretchColumns="1">
+
+        <TableRow android:background="#BBFFFFFF">
             <TextView
-                android:text="Goals"
-                android:padding="3dp" />
+                style="@style/col1"
+                android:text="@string/goals" />
+
             <TextView
                 android:id="@+id/goalsTeam1"
-                android:text="team1"
-                android:gravity="center"
-                android:padding="3dp" />
+                style="@style/col2" />
+
             <TextView
                 android:id="@+id/goalsTeam2"
-                android:text="team2"
-                android:gravity="right"
-                android:padding="3dp" />
+                style="@style/col3" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:background="#BBCCC0C0">
             <TextView
-                android:text="Behinds"
-                android:padding="3dp" />
+                style="@style/col1"
+                android:text="@string/behinds" />
+
             <TextView
                 android:id="@+id/behindsTeam1"
-                android:text="team1"
-                android:gravity="center"
-                android:padding="3dp" />
+                style="@style/col2" />
+
             <TextView
                 android:id="@+id/behindsTeam2"
-                android:text="team2"
-                android:gravity="right"
-                android:padding="3dp" />
+                style="@style/col3" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:background="#BBFFFFFF">
+
             <TextView
-                android:text="Rushed Behinds"
-                android:padding="3dp" />
+                style="@style/col1"
+                android:text="@string/rbehinds" />
+
             <TextView
                 android:id="@+id/rBehindsTeam1"
-                android:text="team1"
-                android:gravity="center"
-                android:padding="3dp" />
+                style="@style/col2" />
+
             <TextView
                 android:id="@+id/rBehindsTeam2"
-                android:text="team2"
-                android:gravity="right"
-                android:padding="3dp" />
+                style="@style/col3" />
         </TableRow>
     </TableLayout>
 
