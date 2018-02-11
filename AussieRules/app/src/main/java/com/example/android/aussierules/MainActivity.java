@@ -2,10 +2,12 @@ package com.example.android.aussierules;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.print.PrintAttributes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -151,8 +153,11 @@ public class MainActivity extends AppCompatActivity {
         setBallIcon(R.id.ballIconTeam1);
         removeBallIcon(R.id.ballIconTeam2);
         updateDisplay(R.id.numOfTries, numOfTryTeam1);
-        TextView trySize = (TextView)findViewById(R.id.numOfTries);
-        trySize.setTextSize(100);
+        TextView gameOver = (TextView)findViewById(R.id.gameOver);
+        gameOver.setVisibility(View.INVISIBLE);
+
+        TextView tries = (TextView)findViewById(R.id.numOfTries);
+        tries.setVisibility(View.VISIBLE);
     }
 
     public void runPlay(View v) {
@@ -200,9 +205,11 @@ public class MainActivity extends AppCompatActivity {
             updateDisplay(R.id.numOfTries, numOfTryTeam2);
 
             if(numOfTryTeam2 == 0){
-                updateDisplayString(R.id.numOfTries, "GameOver");
-                TextView gameOver = (TextView)findViewById(R.id.numOfTries);
-                gameOver.setTextSize(25);
+                TextView gameOver = (TextView)findViewById(R.id.gameOver);
+                gameOver.setVisibility(View.VISIBLE);
+
+                TextView tries = (TextView)findViewById(R.id.numOfTries);
+                tries.setVisibility(View.INVISIBLE);
             }
         }
 

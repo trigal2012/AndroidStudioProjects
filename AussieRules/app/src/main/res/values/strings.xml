@@ -16,6 +16,9 @@
     /* Trys /
     <string name="tries">5</string>
 
+    /* Game Over */
+    <string name="gameOver">Game Over</string>
+
     /* Table */
     <string name="goals">Goals</string>
     <string name="behinds">Behinds</string>

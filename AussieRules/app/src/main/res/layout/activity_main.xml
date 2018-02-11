@@ -1,165 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/australian_rules_football_field"
     tools:context="com.example.android.aussierules.MainActivity">
 
-    <Button
-        style="@style/resetButtonBorder"
-        android:layout_width="100dp"
-        android:layout_height="40dp" />
-
-    <Button
-        android:id="@+id/reset"
-        style="@style/resetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:onClick="newGame" />
-
-
-    <TextView
-        android:id="@+id/numOfTries"
-        style="@style/Tries"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tries" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:background="@drawable/australian_rules_football_field">
 
         <LinearLayout
-            style="@style/teamHeader"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="@string/team1">
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/ballIconTeam1"
-                style="@style/ballView1"
+            <Button
+                android:id="@+id/reset"
+                style="@style/resetButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/team1" />
-
-            <TextView
-                style="@style/teamView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/team1" />
-
-            <ImageView
-                style="@style/logoView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/team1" />
+                android:onClick="newGame"
+                android:layout_gravity="center_horizontal"/>
 
             <TextView
-                android:id="@+id/scoreTeam1"
-                style="@style/scoreView"
+                android:id="@+id/numOfTries"
+                style="@style/tries"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/score" />
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/gameOver"
+                style="@style/gameOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
         </LinearLayout>
 
         <LinearLayout
-            style="@style/teamHeader"
-            android:layout_width="0dp"
+            android:id="@+id/logoScorePanel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/ballIconTeam2"
-                style="@style/ballView2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                style="@style/teamHeader"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/team2" />
+                android:layout_weight="1"
+                android:contentDescription="@string/team1">
 
-            <TextView
-                style="@style/teamView2"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/ballIconTeam1"
+                    style="@style/ballView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/team1" />
+
+                <TextView
+                    style="@style/teamView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/team1" />
+
+                <ImageView
+                    style="@style/logoView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/team1" />
+
+                <TextView
+                    android:id="@+id/scoreTeam1"
+                    style="@style/scoreView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/teamHeader"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/team2" />
+                android:layout_weight="1">
 
-            <ImageView
-                style="@style/logoView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/team2" />
+                <ImageView
+                    android:id="@+id/ballIconTeam2"
+                    style="@style/ballView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/team2" />
 
-            <TextView
-                android:id="@+id/scoreTeam2"
-                style="@style/scoreView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/score" />
+                <TextView
+                    style="@style/teamView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/team2" />
 
+                <ImageView
+                    style="@style/logoView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/team2" />
+
+                <TextView
+                    android:id="@+id/scoreTeam2"
+                    style="@style/scoreView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score" />
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <Button
-        android:id="@+id/playButton"
-        style="@style/playButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="runPlay"
-        android:text="@string/play" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/logoScorePanel">
 
-    <TableLayout
-        android:id="@+id/statsTable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:background="#BB000000"
-        android:padding="2dp"
-        android:stretchColumns="1">
+            <Button
+                android:id="@+id/playButton"
+                style="@style/playButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="runPlay"
+                android:text="@string/play" />
 
-        <TableRow android:background="#BBFFFFFF">
-            <TextView
-                style="@style/col1"
-                android:text="@string/goals" />
+            <TableLayout
+                android:id="@+id/statsTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/playButton"
+                android:layout_margin="10dp"
+                android:background="#BB000000"
+                android:padding="2dp"
+                android:stretchColumns="1">
 
-            <TextView
-                android:id="@+id/goalsTeam1"
-                style="@style/col2" />
+                <TableRow android:background="#BBFFFFFF">
+                    <TextView
+                        style="@style/col1"
+                        android:text="@string/goals" />
 
-            <TextView
-                android:id="@+id/goalsTeam2"
-                style="@style/col3" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/goalsTeam1"
+                        style="@style/col2" />
 
-        <TableRow android:background="#BBCCC0C0">
-            <TextView
-                style="@style/col1"
-                android:text="@string/behinds" />
+                    <TextView
+                        android:id="@+id/goalsTeam2"
+                        style="@style/col3" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/behindsTeam1"
-                style="@style/col2" />
+                <TableRow android:background="#BBCCC0C0">
+                    <TextView
+                        style="@style/col1"
+                        android:text="@string/behinds" />
 
-            <TextView
-                android:id="@+id/behindsTeam2"
-                style="@style/col3" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/behindsTeam1"
+                        style="@style/col2" />
 
-        <TableRow android:background="#BBFFFFFF">
+                    <TextView
+                        android:id="@+id/behindsTeam2"
+                        style="@style/col3" />
+                </TableRow>
 
-            <TextView
-                style="@style/col1"
-                android:text="@string/rbehinds" />
+                <TableRow android:background="#BBFFFFFF">
 
-            <TextView
-                android:id="@+id/rBehindsTeam1"
-                style="@style/col2" />
+                    <TextView
+                        style="@style/col1"
+                        android:text="@string/rbehinds" />
 
-            <TextView
-                android:id="@+id/rBehindsTeam2"
-                style="@style/col3" />
-        </TableRow>
-    </TableLayout>
+                    <TextView
+                        android:id="@+id/rBehindsTeam1"
+                        style="@style/col2" />
 
-</RelativeLayout>
+                    <TextView
+                        android:id="@+id/rBehindsTeam2"
+                        style="@style/col3" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
