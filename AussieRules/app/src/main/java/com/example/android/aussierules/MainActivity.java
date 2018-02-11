@@ -2,16 +2,12 @@ package com.example.android.aussierules;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.print.PrintAttributes;
 import android.support.v7.app.AppCompatActivity;
-import android.util.ArrayMap;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     int goalsTeam1;
     int behindsTeam1;
     int rBehindsTeam1;
+    int behinds1;
 
     /* initialize data for team 2 */
     int scoreTeam2;
@@ -29,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     int goalsTeam2;
     int behindsTeam2;
     int rBehindsTeam2;
+    int behinds2;
 
     /* data for game play */
     int numOfPlays = 0;
@@ -79,6 +77,35 @@ public class MainActivity extends AppCompatActivity {
         Button btn = (Button)findViewById(R.id.reset);
         btn.setEnabled(true);
     }
+
+    private void determineScore(){
+        behinds1 = rBehindsTeam2 + behindsTeam1;
+        scoreTeam1 = behinds1 + goalsTeam1 * 6;
+        behinds2 = rBehindsTeam1 + behindsTeam2;
+        scoreTeam2 = behinds2 + goalsTeam2 * 6;
+    }
+
+    private void setBold(Integer s1) {
+        TextView scoreBold = (TextView) findViewById(s1);
+        scoreBold.setTypeface(null, Typeface.BOLD);
+
+    }
+
+    private void setNormal(Integer s2){
+        TextView scoreNormal = (TextView)findViewById(s2);
+        scoreNormal.setTypeface(null, Typeface.NORMAL);
+    }
+
+    private void makeVisible(Integer v1){
+        TextView visibile = (TextView)findViewById(v1);
+        visibile.setVisibility(View.VISIBLE);
+    }
+
+    private void makeInvisible(Integer i1){
+        TextView invisibile = (TextView)findViewById(i1);
+        invisibile.setVisibility(View.INVISIBLE);
+    }
+
     private void resetData() {
         /* data for game play */
         numOfPlays = 0;
@@ -89,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         goalsTeam1 = 0;
         behindsTeam1 = 0;
         rBehindsTeam1 = 0;
+        behinds1 = 0;
 
         /* data for team 2 */
         scoreTeam2 = 0;
@@ -96,20 +124,19 @@ public class MainActivity extends AppCompatActivity {
         goalsTeam2 = 0;
         behindsTeam2 = 0;
         rBehindsTeam2 = 0;
+        behinds2 = 0;
     }
 
     private void updateEverything() {
+        determineScore();
+
         /* update team1 stats */
-        int behinds1 = rBehindsTeam2 + behindsTeam1;
-        scoreTeam1 = behinds1 + goalsTeam1 * 6;
         updateDisplay(R.id.scoreTeam1, scoreTeam1);
         updateDisplay(R.id.goalsTeam1, goalsTeam1);
         updateDisplay(R.id.behindsTeam1, behindsTeam1);
         updateDisplay(R.id.rBehindsTeam1, rBehindsTeam1);
 
         /* update team2 stats */
-        int behinds2 = rBehindsTeam1 + behindsTeam2;
-        scoreTeam2 = behinds2 + goalsTeam2 * 6;
         updateDisplay(R.id.scoreTeam2, scoreTeam2);
         updateDisplay(R.id.goalsTeam2, goalsTeam2);
         updateDisplay(R.id.behindsTeam2, behindsTeam2);
@@ -128,20 +155,15 @@ public class MainActivity extends AppCompatActivity {
             setBallIcon(R.id.ballIconTeam2);
 
             if(scoreTeam1 > scoreTeam2){
-                TextView scoreBold1 = (TextView)findViewById(R.id.scoreTeam1);
-                scoreBold1.setTypeface(null, Typeface.BOLD);
-                TextView scoreBold2 = (TextView)findViewById(R.id.scoreTeam2);
-                scoreBold2.setTypeface(null, Typeface.NORMAL);
+                setBold(R.id.scoreTeam1);
+                setNormal(R.id.scoreTeam2);
+
             }else if(scoreTeam2 > scoreTeam1){
-                TextView scoreBold1 = (TextView)findViewById(R.id.scoreTeam1);
-                scoreBold1.setTypeface(null, Typeface.NORMAL);
-                TextView scoreBold2 = (TextView)findViewById(R.id.scoreTeam2);
-                scoreBold2.setTypeface(null, Typeface.BOLD);
+                setBold(R.id.scoreTeam2);
+                setNormal(R.id.scoreTeam1);
             }else {
-                TextView scoreBold1 = (TextView)findViewById(R.id.scoreTeam1);
-                scoreBold1.setTypeface(null, Typeface.BOLD);
-                TextView scoreBold2 = (TextView)findViewById(R.id.scoreTeam2);
-                scoreBold2.setTypeface(null, Typeface.BOLD);
+                setBold(R.id.scoreTeam1);
+                setBold(R.id.scoreTeam2);
             }
         }
     }
@@ -153,17 +175,13 @@ public class MainActivity extends AppCompatActivity {
         setBallIcon(R.id.ballIconTeam1);
         removeBallIcon(R.id.ballIconTeam2);
         updateDisplay(R.id.numOfTries, numOfTryTeam1);
-        TextView gameOver = (TextView)findViewById(R.id.gameOver);
-        gameOver.setVisibility(View.INVISIBLE);
-
-        TextView tries = (TextView)findViewById(R.id.numOfTries);
-        tries.setVisibility(View.VISIBLE);
+        makeInvisible(R.id.gameOver);
+        makeVisible(R.id.numOfTries);
     }
 
     public void runPlay(View v) {
         Random r = new Random();
         int playResult = r.nextInt(10 - 0) + 0;
-        Log.i("my tag", "random number is: " + playResult);
 
         numOfPlays = numOfPlays + 1;
 
@@ -205,13 +223,9 @@ public class MainActivity extends AppCompatActivity {
             updateDisplay(R.id.numOfTries, numOfTryTeam2);
 
             if(numOfTryTeam2 == 0){
-                TextView gameOver = (TextView)findViewById(R.id.gameOver);
-                gameOver.setVisibility(View.VISIBLE);
-
-                TextView tries = (TextView)findViewById(R.id.numOfTries);
-                tries.setVisibility(View.INVISIBLE);
+                makeVisible(R.id.gameOver);
+                makeInvisible(R.id.numOfTries);
             }
         }
-
     }
 }
