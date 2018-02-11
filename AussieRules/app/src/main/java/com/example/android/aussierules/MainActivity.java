@@ -3,11 +3,12 @@ package com.example.android.aussierules;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,49 +33,78 @@ public class MainActivity extends AppCompatActivity {
     int numOfPlays = 0;
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("numOfPlays", numOfPlays);
+        outState.putInt("scoreTeam1", scoreTeam1);
+        outState.putInt("numOfTryTeam1", numOfTryTeam1);
+        outState.putInt("goalsTeam1", goalsTeam1);
+        outState.putInt("behindsTeam1", behindsTeam1);
+        outState.putInt("rBehindsTeam1", rBehindsTeam1);
+        outState.putInt("behinds1", behinds1);
+        outState.putInt("scoreTeam2", scoreTeam2);
+        outState.putInt("numOfTryTeam2", numOfTryTeam2);
+        outState.putInt("goalsTeam2", goalsTeam2);
+        outState.putInt("behindsTeam2", behindsTeam2);
+        outState.putInt("rBehindsTeam2", rBehindsTeam2);
+        outState.putInt("behinds2", behinds2);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            numOfPlays = savedInstanceState.getInt("numOfPlays");
+            scoreTeam1 = savedInstanceState.getInt("scoreTeam1");
+            numOfTryTeam1 = savedInstanceState.getInt("numOfTryTeam1");
+            behindsTeam1 = savedInstanceState.getInt("behindsTeam1");
+            rBehindsTeam1 = savedInstanceState.getInt("rBehindsTeam1");
+            behinds1 = savedInstanceState.getInt("behinds1");
+            scoreTeam2 = savedInstanceState.getInt("scoreTeam2");
+            numOfTryTeam2 = savedInstanceState.getInt("numOfTryTeam2");
+            goalsTeam2 = savedInstanceState.getInt("goalsTeam2");
+            behindsTeam2 = savedInstanceState.getInt("behindsTeam2");
+            rBehindsTeam2 = savedInstanceState.getInt("rBehindsTeam2");
+            behinds2 = savedInstanceState.getInt("behinds2");
+        }
         setContentView(R.layout.activity_main);
-        resetData();
         updateEverything();
-        removeBallIcon(R.id.ballIconTeam1);
-        removeBallIcon(R.id.ballIconTeam2);
         disablePlayButton();
     }
 
     /* method used to update display with integer values */
     public void updateDisplay(Integer team, Integer points) {
-        TextView scoreView = (TextView) findViewById(team);
+        TextView scoreView = findViewById(team);
         scoreView.setText(String.valueOf(points));
     }
 
     public void updateDisplayString(Integer team, String msg) {
-        TextView scoreView = (TextView) findViewById(team);
+        TextView scoreView = findViewById(team);
         scoreView.setText(msg);
     }
 
     private void setBallIcon(Integer teamId){
-        ImageView ballIcon = (ImageView)findViewById(teamId);
+        ImageView ballIcon = findViewById(teamId);
         ballIcon.setVisibility(View.VISIBLE);
     }
 
     private void removeBallIcon(Integer teamId){
-        ImageView ballIcon = (ImageView)findViewById(teamId);
+        ImageView ballIcon = findViewById(teamId);
         ballIcon.setVisibility(View.INVISIBLE);
     }
 
     private void disablePlayButton(){
-        Button btn = (Button) findViewById(R.id.playButton);
+        Button btn = findViewById(R.id.playButton);
         btn.setEnabled(false);
     }
 
     private void enablePlayButton(){
-        Button btn = (Button) findViewById(R.id.playButton);
+        Button btn = findViewById(R.id.playButton);
         btn.setEnabled(true);
     }
 
     private void enableNewGameButton(){
-        Button btn = (Button)findViewById(R.id.reset);
+        Button btn = findViewById(R.id.reset);
         btn.setEnabled(true);
     }
 
@@ -86,23 +116,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setBold(Integer s1) {
-        TextView scoreBold = (TextView) findViewById(s1);
+        TextView scoreBold = findViewById(s1);
         scoreBold.setTypeface(null, Typeface.BOLD);
 
     }
 
     private void setNormal(Integer s2){
-        TextView scoreNormal = (TextView)findViewById(s2);
+        TextView scoreNormal = findViewById(s2);
         scoreNormal.setTypeface(null, Typeface.NORMAL);
     }
 
     private void makeVisible(Integer v1){
-        TextView visibile = (TextView)findViewById(v1);
+        TextView visibile = findViewById(v1);
         visibile.setVisibility(View.VISIBLE);
     }
 
     private void makeInvisible(Integer i1){
-        TextView invisibile = (TextView)findViewById(i1);
+        TextView invisibile = findViewById(i1);
         invisibile.setVisibility(View.INVISIBLE);
     }
 
