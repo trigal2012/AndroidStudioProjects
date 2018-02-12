@@ -7,8 +7,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/australian_rules_football_field2">
+        android:layout_height="wrap_content"
+        android:background="@drawable/australian_rules_football_field2"
+        android:contentDescription="@null">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -51,14 +52,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:contentDescription="@string/team1">
+                android:contentDescription="@string/teamHeader">
 
                 <ImageView
                     android:id="@+id/ballIconTeam1"
                     style="@style/ballView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/team1" />
+                    android:contentDescription="@string/team1"/>
 
                 <TextView
                     style="@style/teamView1"
@@ -70,14 +71,13 @@
                     style="@style/logoView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/team1" />
+                    android:contentDescription="@string/team1"/>
 
                 <TextView
                     android:id="@+id/scoreTeam1"
                     style="@style/scoreView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/score" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
             <LinearLayout
@@ -91,13 +91,12 @@
                     style="@style/ballView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/team2" />
+                    android:contentDescription="@string/team2"/>
 
                 <TextView
                     style="@style/teamView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/team2" />
+                    android:layout_height="wrap_content" />
 
                 <ImageView
                     style="@style/logoView2"
@@ -134,7 +133,6 @@
                 android:id="@+id/statsTable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/playButton"
                 android:layout_margin="10dp"
                 android:background="#BB000000"
                 android:padding="2dp"

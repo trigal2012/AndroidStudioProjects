@@ -17,12 +17,14 @@
         <item name="android:layout_gravity">right</item>
         <item name="android:layout_marginTop">-30dp</item>
         <item name="android:layout_marginRight">15dp</item>
+        <item name="android:text">@string/team2</item>
     </style>
 
     <style name="scoreView" parent="@android:style/TextAppearance">
         <item name="android:textSize">35sp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginTop">20dp</item>
+        <item name="android:text">@string/score</item>
     </style>
 
     <style name="logoView1" parent="@android:style/TextAppearance">
