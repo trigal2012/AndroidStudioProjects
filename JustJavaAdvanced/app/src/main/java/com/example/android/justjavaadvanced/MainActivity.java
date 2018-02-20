@@ -4,21 +4,36 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Locale;
 
 /**
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    int quantity = 0;
-    int price = 5;
+    int quantity = 1;
+    String size = "Small";
+    double sizeInt = 0.00;
+    String drink = "Americano";
+    double drinkPrice = 2.50;
+    String subTotal = "$2.50";
+    double wc = 0.00;
+    double cs = 0.00;
+    double total = 0.00;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +43,53 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         topping1.setOnClickListener(this);
         CheckBox topping2 = (CheckBox)findViewById(R.id.topping2);
         topping2.setOnClickListener(this);
+        Button addToCart = (Button)findViewById(R.id.addToCart);
+        addToCart.setOnClickListener(this);
+        Button sumbitOrder = (Button)findViewById(R.id.submitOrder);
+        final Spinner drinkQuantity = (Spinner)findViewById(R.id.drinkQuantity);
+        drinkQuantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                quantity = Integer.parseInt(drinkQuantity.getSelectedItem().toString());
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
+
+            }
+        });
+        final Spinner drinkSize = (Spinner)findViewById(R.id.drinkSize);
+        drinkSize.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                size = drinkSize.getSelectedItem().toString();
+                sizeInt = drinkSize.getSelectedItemPosition();
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
+            }
+        });
+        final Spinner drinkType = (Spinner)findViewById(R.id.drinkType);
+        drinkType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                drink = drinkType.getSelectedItem().toString();
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
+            }
+        });
+
     }
+
 
     @Override
     public void onClick(View v) {
@@ -38,85 +99,94 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 CheckBox checkBox1 = (CheckBox)v;
                 if(checkBox1.isChecked()){
                     //adjust price accordingly
-                    price += 1;
-                    Log.i("topping", "topping1 is selected: " + price);
+                    wc = 1.00;
                 } else{
-                    price -= 1;
-                    Log.i("topping", "topping1 is not selected: " + price);
+                    wc = 0.00;
                 }
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
                 break;
             case R.id.topping2:
                 CheckBox checkBox2 = (CheckBox)v;
                 if(checkBox2.isChecked()){
                     //adjust price accordingly
-                    price += 2;
-                    Log.i("topping", "topping2 is selected: " + price);
+                    cs = 2.00;
                 } else{
-                    price -= 2;
-                    Log.i("topping", "topping2 is not selected: " + price);
+                    cs = 0.00;
                 }
+                getSubtotal(quantity, drink, sizeInt, wc, cs);
+                break;
+            case R.id.addToCart:
+                LinearLayout orderSum = (LinearLayout)this.findViewById(R.id.orderSummary);
+                LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                if(quantity > 1){
+                    drink = drink + "s";
+                }
+                if(wc > 0.00 && cs > 0.00){
+                    drink = drink + " (wc, cs)";
+                } else if(wc > 0.00 && cs == 0.00){
+                    drink = drink + " (wc)";
+                } else if(wc == 0.00 && cs > 0.00){
+                    drink = drink + " (cs)";
+                }
+                TextView orderText = new TextView(this);
+                orderText.setLayoutParams(lparams);
+                lparams.weight = 2;
+                orderText.setText(quantity + " " + size + " " + drink + "\n");
+                orderSum.addView(orderText);
+                //String message = quantity + " " + size + " " + drink;
+                //displayMessage(message, R.id.summary1);
+                //displayMessage(subTotal, R.id.summaryPrice1);
+                TextView orderPrice = new TextView(this);
+                orderPrice.setLayoutParams(lparams);
+                lparams.gravity = Gravity.RIGHT;
+                lparams.weight = 1;
+                orderPrice.setText(subTotal + "\n");
+                orderSum.addView(orderPrice);
+
+
+                total += drinkPrice;
+                displayMessage(Double.toString(total), R.id.order_total);
+                drink = "Americano";
                 break;
         }
 
     }
 
 
-            /**
-             * This method is called when the order button is clicked.
-             */
-
-    public void submitOrder(View view) {
-        String priceMessage = "Name: ";
-        priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\nTotal: " + price;
-        priceMessage += "\nThank You!";
-        displayMessage(priceMessage);
-    }
-
-    /**
-     * This method is called when the + (plus) button is clicked.
-     * per lesson, don't allow more than 100 cups of coffee
-     * send toast message if user tries to order more than 100 cups.
-     */
-    public void increment(View view) {
-        if(quantity == 100){
-            Toast.makeText(getApplicationContext(), "You have reached the maximum # of cups allowed", Toast.LENGTH_LONG).show();
-        } else {
-            quantity = quantity + 1;
+    private double getSubtotal(int quantity, String drink, double sizeInt, double wc, double cs){
+        if(drink.equals("Americano")){
+            drinkPrice = quantity * (2.50 + sizeInt + wc + cs);
         }
-        display(quantity);
-    }
-
-    /**
-     * This method is called when the - (minus) button is clicked.
-     */
-    public void decrement(View view) {
-        if (quantity > 0) {
-            quantity = quantity - 1;
-        } else {
-            quantity = 0;
+        if(drink.equals("Mocha")){
+            drinkPrice = quantity * (3.75 + sizeInt + wc + cs);
         }
-        display(quantity);
+        if(drink.equals("Latte")){
+            drinkPrice = quantity * (3.00 + sizeInt + wc + cs);
+        }
+        if(drink.equals("Cappucino")){
+            drinkPrice  = quantity * (3.50 + sizeInt + wc + cs);
+        }
+        formatPrice(drinkPrice);
+
+        return drinkPrice;
+    };
+
+    private void formatPrice(double drinkPrice){
+        Locale locale = Locale.US;
+        subTotal = NumberFormat.getInstance(locale).format(drinkPrice);
+        Currency curr = Currency.getInstance(locale);
+        String symbol = curr.getSymbol(locale);
+        displayMessage(symbol+subTotal, R.id.subTotal);
+    };
+
+    private void displayMessage(String message, int view) {
+        TextView orderSummary = findViewById(view);
+        orderSummary.setText(message);
     }
 
-    /**
-     * This method displays the given quantity value on the screen.
-     */
-    private void display(int number) {
-        TextView quantityTextView = findViewById(R.id.order_total);
-        quantityTextView.setText("" + number);
-    }
-
-    /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = findViewById(R.id.order_total);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    private void displayMessage(String message) {
-        TextView priceTextView = findViewById(R.id.order_total);
-        priceTextView.setText(message);
+    private String getOrderName(){
+        EditText getName = (EditText)findViewById(R.id.name);
+        String nameValue = getName.getText().toString();
+        return nameValue;
     }
 }

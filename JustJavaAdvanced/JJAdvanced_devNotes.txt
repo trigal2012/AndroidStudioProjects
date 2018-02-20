@@ -1,0 +1,30 @@
+JJAdvanced Notes
+
+1. Use Name field value
+2. set prices per drink type and size
+3. set prices for options
+4. calculate sub-total based on quantity, size, drink type and options
+5. update sub-total as selections are made
+6. connect up the "add to cart button"
+--make button clickable
+--add selection summary to Order Summary field
+--update total (summary of all items in the cart)
+--remove item from cart - update Total
+7. Connect up the Submit Order button
+--present Toast (mock payment)
+--when toast closes, open email
+8. Email receipt summary
+--Name: Persons Name
+--Order Summary:
+	item 1
+	item 2
+	etc
+--Total: $150.00
+--Thank You!
+--Email Subject - Coffee receipt $150.00
+9. Style, theme, color App
+10. add support for other language
+11. add support for different views (Portrait vs. Layout)
+
+Questions:
+1. how to center Checkbox within area available?
