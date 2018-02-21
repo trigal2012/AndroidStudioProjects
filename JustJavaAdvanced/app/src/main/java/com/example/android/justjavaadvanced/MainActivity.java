@@ -23,17 +23,19 @@ import java.util.Locale;
  */
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    int quantity = 1;
     String size = "Small";
-    double sizeInt = 0.00;
     String drink = "Americano";
-    double drinkPrice = 2.50;
     String subTotal = "$2.50";
+    String tempReceipt = "";
+    String receipt = "";
+
+    int quantity = 1;
+
+    double sizeInt = 0.00;
+    double drinkPrice = 2.50;
     double wc = 0.00;
     double cs = 0.00;
     double total = 0.00;
-    String tempReceipt = "";
-    String receipt = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,20 +103,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 if(checkBox1.isChecked()){
                     //adjust price accordingly
                     wc = 1.00;
+                    getSubtotal(quantity, drink, sizeInt, wc, cs);
                 } else{
                     wc = 0.00;
+                    getSubtotal(quantity, drink, sizeInt, wc, cs);
                 }
-                getSubtotal(quantity, drink, sizeInt, wc, cs);
                 break;
             case R.id.topping2:
                 CheckBox checkBox2 = (CheckBox)v;
                 if(checkBox2.isChecked()){
                     //adjust price accordingly
                     cs = 2.00;
+                    getSubtotal(quantity, drink, sizeInt, wc, cs);
                 } else{
                     cs = 0.00;
+                    getSubtotal(quantity, drink, sizeInt, wc, cs);
                 }
-                getSubtotal(quantity, drink, sizeInt, wc, cs);
                 break;
             case R.id.addToCart:
                 if(quantity > 1){
@@ -155,11 +159,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 //update receipt
                 tempReceipt += orderDetailsText + " " + subTotal + "\n";
 
-                //reset selections
-                drink = "Americano";
-                size = "S";
-                sizeInt = 0;
-                quantity = 1;
+
                 break;
             case R.id.submitOrder:
                 receipt += "Name: " + getOrderName() + "\n";
