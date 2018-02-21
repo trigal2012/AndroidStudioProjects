@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just Java Advanced</string>
+    <string name="quantityText">Quantité</string>
+    <string name="quantityValue">0</string>
+    <string name="orderButtonText">Soumettre la commande</string>
+    <string name="topping1">Crème fouettée</string>
+    <string name="topping2">PEPITES de chocolat</string>
+    <string name="subtotalText">sous - Total</string>
+    <string name="nameHint">prénom</string>
+    <string name="sizeText">la dimension</string>
+    <string name="drinkSelection">Type de boisson</string>
+    <string name="addToOrder">Ajouter au panier</string>
+    <string name="orderTotal">€</string>
+    <string name="price">€5.00</string>
+</resources>

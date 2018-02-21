@@ -1,14 +1,14 @@
 JJAdvanced Notes
 
-1. Use Name field value
-2. set prices per drink type and size
-3. set prices for options
-4. calculate sub-total based on quantity, size, drink type and options
-5. update sub-total as selections are made
+1. Use Name field value - done
+2. set prices per drink type and size - done
+3. set prices for options - done
+4. calculate sub-total based on quantity, size, drink type and options - done
+5. update sub-total as selections are made - done
 6. connect up the "add to cart button"
---make button clickable
---add selection summary to Order Summary field
---update total (summary of all items in the cart)
+--make button clickable - done
+--add selection summary to Order Summary field (need to add dynamically generated info) - done
+--update total (summary of all items in the cart) - done
 --remove item from cart - update Total
 7. Connect up the Submit Order button
 --present Toast (mock payment)
@@ -25,6 +25,23 @@ JJAdvanced Notes
 9. Style, theme, color App
 10. add support for other language
 11. add support for different views (Portrait vs. Layout)
+12. check math on order matrix
 
 Questions:
 1. how to center Checkbox within area available?
+
+
+            <TextView
+                android:id="@+id/summary1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="2 L Americanos (wc, cs)"/>
+
+            <TextView
+                android:id="@+id/summaryPrice1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="$5.99"/>

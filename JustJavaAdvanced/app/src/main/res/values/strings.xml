@@ -2,26 +2,25 @@
     <string name="app_name">Just Java Advanced</string>
     <string name="quantityText">Quantity</string>
     <string name="quantityValue">0</string>
-    <string name="increment">+</string>
-    <string name="decrement">-</string>
-    <string name="priceText">Price per Cup: </string>
     <string name="price">$5.00</string>
-    <string name="orderTotal">$0.00</string>
-    <string name="orderButtonText">Submit Order</string>
-    <string name="toppings">Options</string>
+    <string name="orderTotal">Total: $0.00</string>
     <string name="topping1">Whipped Cream</string>
     <string name="topping2">Chocolate Sprinkles</string>
-    <string name="topping3">Caramel Liquor</string>
-    <string name="drinkPrompt">Pick Your Drink</string>
-    <string name="drinkSizePrompt">Select Your Size</string>
-    <string name="drinkQuantityPrompt">Quantity</string>
+    <string name="subtotalText">Sub-Total</string>
+    <string name="nameHint">Name</string>
+    <string name="sizeText">Size</string>
+    <string name="drinkSelection">Drink Type</string>
+    <string name="addToOrder">Add To Order</string>
+    <string name="orderButtonText">Submit Order</string>
+    <string name="top1Price">$1.00/cup</string>
+    <string name="top2Price">$2.00/cup</string>
 
 
     <string-array name="drinkTypes">
         <item>Americano</item>
         <item>Mocha</item>
         <item>Latte</item>
-        <item>Cappucino</item>
+        <item>Cappuccino</item>
     </string-array>
 
     <string-array name="drinkSizes">

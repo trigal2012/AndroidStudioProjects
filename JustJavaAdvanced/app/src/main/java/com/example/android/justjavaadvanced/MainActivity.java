@@ -1,12 +1,11 @@
 package com.example.android.justjavaadvanced;
 
-import android.media.MediaPlayer;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,7 +13,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.view.View.OnClickListener;
 import java.text.NumberFormat;
 import java.util.Currency;
@@ -34,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     double wc = 0.00;
     double cs = 0.00;
     double total = 0.00;
+    String tempReceipt = "";
+    String receipt = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         Button addToCart = (Button)findViewById(R.id.addToCart);
         addToCart.setOnClickListener(this);
         Button sumbitOrder = (Button)findViewById(R.id.submitOrder);
+        sumbitOrder.setOnClickListener(this);
         final Spinner drinkQuantity = (Spinner)findViewById(R.id.drinkQuantity);
         drinkQuantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                getSubtotal(quantity, drink, sizeInt, wc, cs);
+                //getSubtotal(quantity, drink, sizeInt, wc, cs);
 
             }
         });
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                getSubtotal(quantity, drink, sizeInt, wc, cs);
+                //getSubtotal(quantity, drink, sizeInt, wc, cs);
             }
         });
         final Spinner drinkType = (Spinner)findViewById(R.id.drinkType);
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                getSubtotal(quantity, drink, sizeInt, wc, cs);
+                //getSubtotal(quantity, drink, sizeInt, wc, cs);
             }
         });
 
@@ -116,8 +117,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 getSubtotal(quantity, drink, sizeInt, wc, cs);
                 break;
             case R.id.addToCart:
-                LinearLayout orderSum = (LinearLayout)this.findViewById(R.id.orderSummary);
-                LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 if(quantity > 1){
                     drink = drink + "s";
                 }
@@ -128,26 +127,53 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 } else if(wc == 0.00 && cs > 0.00){
                     drink = drink + " (cs)";
                 }
-                TextView orderText = new TextView(this);
-                orderText.setLayoutParams(lparams);
-                lparams.weight = 2;
-                orderText.setText(quantity + " " + size + " " + drink + "\n");
-                orderSum.addView(orderText);
-                //String message = quantity + " " + size + " " + drink;
-                //displayMessage(message, R.id.summary1);
-                //displayMessage(subTotal, R.id.summaryPrice1);
-                TextView orderPrice = new TextView(this);
-                orderPrice.setLayoutParams(lparams);
-                lparams.gravity = Gravity.RIGHT;
-                lparams.weight = 1;
-                orderPrice.setText(subTotal + "\n");
-                orderSum.addView(orderPrice);
+                LinearLayout orderSum = (LinearLayout)findViewById(R.id.orderSummary);
+                //adds an order row
+                LinearLayout orderRow = (LinearLayout) View.inflate(this, R.layout.order_summary_row, null);
+                orderSum.addView(orderRow);
 
+                //adds the order details
+                TextView orderDetails = (TextView) View.inflate(this, R.layout.order_summary_details, null);
+                orderRow.addView(orderDetails);
+                LinearLayout.LayoutParams detailParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 2);
+                orderDetails.setLayoutParams(detailParams);
+                String orderDetailsText = quantity + " " + size + " " + drink;
+                orderDetails.setText(orderDetailsText);
 
+                //adds the price details
+                TextView orderPrice = (TextView) View.inflate(this, R.layout.order_summary_price, null);
+                orderRow.addView(orderPrice);
+                LinearLayout.LayoutParams priceParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+                orderPrice.setLayoutParams(priceParams);
+                orderPrice.setText(subTotal);
+
+                //update total nd display
                 total += drinkPrice;
-                displayMessage(Double.toString(total), R.id.order_total);
+                String tmessage = "Total: " + Double.toString(total);
+                displayMessage(tmessage, R.id.order_total);
+
+                //update receipt
+                tempReceipt += orderDetailsText + " " + subTotal + "\n";
+
+                //reset selections
                 drink = "Americano";
+                size = "S";
+                sizeInt = 0;
+                quantity = 1;
                 break;
+            case R.id.submitOrder:
+                receipt += "Name: " + getOrderName() + "\n";
+                receipt += tempReceipt + "\n";
+                receipt += "Total: " + total + "\n";
+                receipt += "Thank You!";
+                Log.i("submit order", receipt);
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java Advanced order for " + getOrderName());
+                intent.putExtra(Intent.EXTRA_TEXT, receipt);
+                if (intent.resolveActivity(getPackageManager())!= null){
+                    startActivity(intent);
+                }
         }
 
     }
@@ -163,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         if(drink.equals("Latte")){
             drinkPrice = quantity * (3.00 + sizeInt + wc + cs);
         }
-        if(drink.equals("Cappucino")){
+        if(drink.equals("Cappuccino")){
             drinkPrice  = quantity * (3.50 + sizeInt + wc + cs);
         }
         formatPrice(drinkPrice);
@@ -172,11 +198,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     };
 
     private void formatPrice(double drinkPrice){
-        Locale locale = Locale.US;
-        subTotal = NumberFormat.getInstance(locale).format(drinkPrice);
-        Currency curr = Currency.getInstance(locale);
-        String symbol = curr.getSymbol(locale);
-        displayMessage(symbol+subTotal, R.id.subTotal);
+        subTotal = NumberFormat.getInstance().format(drinkPrice);
+        displayMessage(subTotal, R.id.subTotal);
     };
 
     private void displayMessage(String message, int view) {
@@ -189,4 +212,5 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         String nameValue = getName.getText().toString();
         return nameValue;
     }
+
 }
