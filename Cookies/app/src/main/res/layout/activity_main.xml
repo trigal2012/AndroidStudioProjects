@@ -27,6 +27,7 @@
         android:textSize="34sp" />
 
     <Button
+        android:id="@+id/eatCookieBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

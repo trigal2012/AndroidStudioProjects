@@ -1,9 +1,9 @@
 package com.example.android.cookies;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,5 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView changeText = findViewById(R.id.status_text_view);
         changeText.setText("I'm so full");
+
+        Button changeBtn = findViewById(R.id.eatCookieBtn);
+        changeBtn.setEnabled(false);
     }
 }
