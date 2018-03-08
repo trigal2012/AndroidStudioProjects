@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.mindsport.MainActivity"
+    android:background="@drawable/lightcolorimage"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@color/colorAccent3"
+        android:text="Which Shakespeare play is better known as 'The Scottish Play?'"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/a1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorAccent2"
+        android:textColorHint="#FFFFFF"
+        android:textColor="@color/colorAccent"
+        android:hint="and the answer is?"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@color/colorAccent3"
+        android:text="What is the name of the first king of Scotland in the play 'Macbeth'?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/a1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent2"
+        android:textColorHint="#FFFFFF"
+        android:textColor="@color/colorAccent"
+        android:hint="and the answer is?"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent3"
+        android:text="Who goes to the apothecary and drinks some poison."
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/a1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent2"
+        android:textColorHint="#FFFFFF"
+        android:textColor="@color/colorAccent"
+        android:hint="and the answer is?"
+        android:textSize="20sp"/>
+
+
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:textSize="50sp"
+        android:textColor="#FFFFFF"
+        android:text="NEXT"
+        android:background="@color/colorAccent3"/>
+
+
+</LinearLayout>
