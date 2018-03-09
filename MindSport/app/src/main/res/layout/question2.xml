@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.mindsport.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lightcolorimage"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/gameName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MindSport"
+        android:textSize="60sp"
+        android:textColor="@color/colorAccent4"
+        android:gravity="center"
+        android:layout_marginTop="16dp" />
+
+
+
+<LinearLayout
+    android:id="@+id/questions"
+    android:layout_below="@id/gameName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/q4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent3"
+        android:text="The soliliquy begins, 'To be or not to be...' What's the play?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent2">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg1_1"
+            android:text="Othello"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg1_2"
+            android:text="Macbeth"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg1_3"
+            android:text="Hamlet"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg1_4"
+            android:text="Romeo and Juliet"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/q5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent3"
+        android:text="How did Romeo and Juliet meet?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent2">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg2_1"
+            android:text="Chruch"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg2_2"
+            android:text="Masquerade Ball"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg2_3"
+            android:text="Beach party"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg2_4"
+            android:text="ball game"/>
+    </RadioGroup>
+
+
+</LinearLayout>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/next2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="50sp"
+        android:textColor="#FFFFFF"
+        android:text="NEXT"
+        android:background="@color/colorAccent3"/>
+</RelativeLayout>

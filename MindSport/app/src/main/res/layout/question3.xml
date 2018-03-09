@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.mindsport.MainActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"  >
+    android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="match_parent"
@@ -24,92 +24,88 @@
         android:layout_marginTop="16dp" />
 
     <LinearLayout
-        android:layout_below="@id/gameName"
         android:id="@+id/questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/gameName"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/q1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="32dp"
-            android:background="@color/colorAccent3"
-            android:text="Which Shakespeare play is better known as 'The Scottish Play?'"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/a1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/colorAccent2"
-            android:hint="and the answer is?"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="#FFFFFF"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/q2"
+            android:id="@+id/q6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:background="@color/colorAccent3"
-            android:text="What is the name of the first king of Scotland in the play 'Macbeth'?"
+            android:text="Check all the true statements:"
             android:textColor="#FFFFFF"
             android:textSize="20sp"/>
 
-        <EditText
-            android:id="@+id/a2"
+        <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="32dp"
             android:background="@color/colorAccent2"
-            android:textColorHint="#FFFFFF"
-            android:textColor="@color/colorAccent"
-            android:hint="and the answer is?"
-            android:textSize="20sp"/>
+            android:text="I like PB&amp;J."/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorAccent2"
+            android:text="Puppies are the best"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorAccent2"
+            android:text="Star Trek is better than Star Wars"/>
 
         <TextView
-            android:id="@+id/q3"
+            android:id="@+id/q6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="64dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:background="@color/colorAccent3"
-            android:text="Who goes to the apothecary and drinks some poison."
+            android:text="Check all the true statements:"
             android:textColor="#FFFFFF"
             android:textSize="20sp"/>
 
-        <EditText
-            android:id="@+id/a3"
+        <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="32dp"
             android:background="@color/colorAccent2"
-            android:textColorHint="#FFFFFF"
-            android:textColor="@color/colorAccent"
-            android:hint="and the answer is?"
-            android:textSize="20sp"/>
+            android:text="I like PB&amp;J."/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorAccent2"
+            android:text="Puppies are the best"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/colorAccent2"
+            android:text="Star Trek is better than Star Wars"/>
 
     </LinearLayout>
-
     <Button
         android:layout_alignParentBottom="true"
-        android:id="@+id/next1"
+        android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -118,7 +114,9 @@
         android:layout_marginBottom="16dp"
         android:textSize="50sp"
         android:textColor="#FFFFFF"
-        android:text="NEXT"
+        android:text="SUBMIT"
         android:background="@color/colorAccent3"/>
 </RelativeLayout>
+
+
 
