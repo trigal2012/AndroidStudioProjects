@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <resources>
-        <string-array name="planets_array">
-            <item>Mercury</item>
-            <item>Venus</item>
-            <item>Earth</item>
-            <item>Mars</item>
-            <item>Jupiter</item>
-            <item>Saturn</item>
-            <item>Uranus</item>
-            <item>Neptune</item>
-        </string-array>
-    </resources>
+<resources>
+    <string name="title">MINDSPORT</string>
+    <string name="q1">Which Shakespeare play is better known as "The Scottish Play"?</string>
+    <string name="q2">Who likes (or not) green eggs and ham?</string>
+    <string name="q3">Who goes to the apothecary and drinks some poison?</string>
+    <string name="q4">The soliliquy begins, "To be or not to be..." What's the play?</string>
+    <string name="q5">How did Lucy and Ricky meet?</string>
+    <string name="q6">Select the true statement(s):</string>
+    <string name="q7">Select the false statement(s):</string>
+
+    <string name="aText">and the answer is?</string>
+
+    <string name="a4_1">Othello</string>
+    <string name="a4_2">Macbeth</string>
+    <string name="a4_3">Hamlet</string>
+    <string name="a4_4">Romeo and Juliet</string>
+
+    <string name="a5_1">Church</string>
+    <string name="a5_2">Dance Hall</string>
+    <string name="a5_3">Beach Party</string>
+    <string name="a5_4">Blind Date</string>
+
+    <string name="a6_1">I love PB&amp;J sandwiches</string>
+    <string name="a6_2">Puppies are the best!</string>
+    <string name="a6_3">Star Trek is better than Star Wars.</string>
+
+    <string name="a7_1">The Grass is always greener.</string>
+    <string name="a7_2">The answer is 42.</string>
+    <string name="a7_3">Star Wars is better than Star Trek.</string>
+
+</resources>
