@@ -31,31 +31,23 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@color/colorAccent2">
+            android:background="@color/colorAccentTrans2">
 
             <RadioButton
                 android:id="@+id/a4_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Othello" />
+                style="@style/answerRadioButton"
+                android:text="@string/a4_1" />
 
             <RadioButton
                 android:id="@+id/a4_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Macbeth" />
+                style="@style/answerRadioButton"
+                android:text="@string/a4_2" />
 
             <RadioButton
                 android:id="@+id/a4_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hamlet" />
+                style="@style/answerRadioButton"
+                android:text="@string/a4_3" />
 
-            <RadioButton
-                android:id="@+id/a4_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Romeo and Juliet" />
         </RadioGroup>
 
         <TextView
@@ -68,31 +60,21 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@color/colorAccent2">
+            android:background="@color/colorAccentTrans2">
 
             <RadioButton
                 android:id="@+id/a5_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Chruch" />
-
+                style="@style/answerRadioButton"
+                android:text="@string/a5_1" />
             <RadioButton
                 android:id="@+id/a5_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dance Hall" />
-
+                style="@style/answerRadioButton"
+                android:text="@string/a5_2" />
             <RadioButton
                 android:id="@+id/a5_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Beach party" />
+                style="@style/answerRadioButton"
+                android:text="@string/a5_3" />
 
-            <RadioButton
-                android:id="@+id/a5_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Blind Date" />
         </RadioGroup>
 
 

@@ -23,6 +23,7 @@
         <TextView
             android:id="@+id/q1"
             style="@style/questionFormat1"
+            android:layout_marginTop="64dp"
             android:text="@string/q1"/>
 
         <EditText
