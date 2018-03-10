@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title">MINDSPORT</string>
-    <string name="q1">Which Shakespeare play is better known as "The Scottish Play"?</string>
+
+    //Image strings
+    <string name="contentDesription">mind exploding with ideas</string>
+
+    //Question Strings
+    <string name="q1">Which Shakespeare play is better known as \'The Scottish Play\'?</string>
     <string name="q2">Who likes (or not) green eggs and ham?</string>
     <string name="q3">Who goes to the apothecary and drinks some poison?</string>
-    <string name="q4">The soliliquy begins, "To be or not to be..." What's the play?</string>
+    <string name="q4">This begins, \'To be or not to be...\' What is the play?</string>
     <string name="q5">Where did Lucy and Ricky meet?</string>
     <string name="q6">Select the true statement(s):</string>
     <string name="q7">Select the false statement(s):</string>
 
-    <string name="aText">and the answer is?</string>
-
+    //Answer Strings
+    <string name="pName">PLAYER NAME</string>
+    <string name="aText">and the answer is...</string>
     <string name="a4_1">Othello</string>
     <string name="a4_2">Macbeth</string>
     <string name="a4_3">Hamlet</string>
@@ -28,5 +34,11 @@
     <string name="a7_1">The Grass is always greener.</string>
     <string name="a7_2">The answer is 42.</string>
     <string name="a7_3">Star Wars is better than Star Trek.</string>
+
+    //Button strings
+    <string name="startGame">START GAME</string>
+    <string name="next">NEXT</string>
+    <string name="submit">SUBMIT</string>
+    <string name="startOver">PLAY AGAIN</string>
 
 </resources>

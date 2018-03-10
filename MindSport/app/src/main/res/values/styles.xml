@@ -26,24 +26,9 @@
         <item name="android:src">@drawable/lightcolorimage</item>
     </style>
 
-
-    <style name="questionFormat1" parent="Theme.AppCompat.CompactMenu">
+    <style name="questionBaseFormat" parent="Theme.AppCompat.CompactMenu">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">32dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:paddingLeft">10dp</item>
-        <item name="android:background">@color/colorAccentTrans3</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">25sp</item>
-    </style>
-
-    <style name="questionFormat2" parent="Theme.AppCompat.CompactMenu">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:paddingLeft">10dp</item>
@@ -53,40 +38,55 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="answerText" parent="Theme.AppCompat.CompactMenu">
+    <style name="questionFormat1" parent="@style/questionBaseFormat">
+        <item name="style">questionBaseFormat</item>
+        <item name="android:layout_marginTop">32dp</item>
+    </style>
+
+    <style name="questionFormat2" parent="@style/questionBaseFormat">
+        <item name="style">questionBaseFormat</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="answerBaseFormat" parent="Theme.AppCompat.CompactMenu">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:paddingLeft">10dp</item>
         <item name="android:background">@color/colorAccentTrans2</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="answerFormat1" parent="@style/answerBaseFormat">
+        <item name="style">answerBaseFormat</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+    </style>
+
+    <style name="answerText" parent="@style/answerFormat1">
+        <item name="style">answerFormat1</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:paddingLeft">10dp</item>
         <item name="android:text">@string/aText</item>
     </style>
 
 
-    <style name="answerCheckBox" parent="Theme.AppCompat.CompactMenu">
+    <style name="linearLayout" parent="Theme.AppCompat.CompactMenu">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@id/gameName</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="button" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginBottom">16dp</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
-        <item name="android:background">@color/colorAccentTrans2</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/colorAccentTrans3</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">50sp</item>
     </style>
-
-
-    <style name="answerRadioButton" parent="Theme.AppCompat.CompactMenu">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/colorAccentTrans2</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
-
-
-    </style>
-
 
 </resources>

@@ -6,15 +6,13 @@
     tools:context="com.example.android.mindsport.MainActivity">
 
     <ImageView
-        style="@style/image"/>
+        style="@style/image"
+        android:contentDescription="@string/contentDescription"/>
 
-    <TextView
-        android:id="@+id/gameName"
-        style="@style/title"/>
+    <TextView style="@style/title"/>
 
 
     <EditText
-        android:id="@+id/playerName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -22,24 +20,14 @@
         android:layout_marginTop="200dp"
         android:background="@color/colorAccentTrans2"
         android:textColorHint="#FFFFFF"
-        android:elevation="8dp"
         android:gravity="center"
-        android:hint="Player Name"
-        android:textSize="60sp" />
+        android:hint="@string/pName"
+        android:textSize="50sp" />
 
     <Button
-        android:id="@+id/startBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="32dp"
-        android:background="@color/colorAccentTrans3"
-        android:elevation="8dp"
-        android:text="Start Game"
-        android:textColor="#FFFFFF"
-        android:textSize="50sp" />
+        android:id="@+id/start"
+        style="@style/button"
+        android:text="@string/startGame"/>
 
 
 </RelativeLayout>
