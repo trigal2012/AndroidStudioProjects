@@ -8,7 +8,7 @@
 
     <ImageView
         style="@style/image"
-        android:contentDescription="@string/contentDesription"/>
+        android:contentDescription="@string/contentDescription"/>
 
     <TextView
         android:id="@+id/gameName"

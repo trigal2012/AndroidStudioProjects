@@ -7,10 +7,8 @@
     tools:context="com.example.android.mindsport.MainActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/lightcolorimage" />
+        style="@style/image"
+        android:contentDescription="@string/contentDescription"/>
 
     <TextView
         android:id="@+id/gameName"

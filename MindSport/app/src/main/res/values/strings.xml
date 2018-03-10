@@ -3,7 +3,7 @@
     <string name="title">MINDSPORT</string>
 
     //Image strings
-    <string name="contentDesription">mind exploding with ideas</string>
+    <string name="contentDescription">mind exploding with ideas</string>
 
     //Question Strings
     <string name="q1">Which Shakespeare play is better known as \'The Scottish Play\'?</string>
