@@ -8,34 +8,24 @@
 
     <ImageView
         style="@style/image"
-        android:contentDescription="@string/contentDescription"/>
+        android:contentDescription="@string/contentDescription" />
 
     <TextView
         android:id="@+id/gameName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="MindSport"
-        android:textColor="@color/colorAccent3"
-        android:textStyle="bold"
-        android:textSize="60sp" />
+        style="@style/title" />
 
     <LinearLayout
         android:id="@+id/questions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/gameName"
-        android:orientation="vertical">
+        style="@style/linearLayout">
 
         <TextView
             android:id="@+id/q1"
             style="@style/questionFormat1"
-            android:text="@string/q1"/>
-        
+            android:text="@string/q1" />
+
         <EditText
             android:id="@+id/a1"
-            style="@style/answerText"/>
+            style="@style/answerText" />
 
         <TextView
             android:id="@+id/q2"
@@ -44,25 +34,15 @@
 
         <EditText
             android:id="@+id/a2"
-            style="@style/answerText"/>
+            style="@style/answerText" />
 
     </LinearLayout>
 
 
-
     <Button
         android:id="@+id/next1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@color/colorAccent3"
-        android:text="NEXT"
-        android:textColor="#FFFFFF"
-        android:textSize="50sp" />
+        style="@style/button"
+        android:text="@string/next"/>
 </RelativeLayout>
 
 

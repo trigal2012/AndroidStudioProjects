@@ -7,27 +7,19 @@
 
     <ImageView
         style="@style/image"
-        android:contentDescription="@string/contentDescription"/>
+        android:contentDescription="@string/contentDescription" />
 
-    <TextView style="@style/title"/>
+    <TextView style="@style/title" />
 
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="200dp"
-        android:background="@color/colorAccentTrans2"
-        android:textColorHint="#FFFFFF"
-        android:gravity="center"
-        android:hint="@string/pName"
-        android:textSize="50sp" />
+        android:id="@+id/pname"
+        style="@style/editText"/>
 
     <Button
         android:id="@+id/start"
         style="@style/button"
-        android:text="@string/startGame"/>
+        android:text="@string/startGame" />
 
 
 </RelativeLayout>
