@@ -27,25 +27,29 @@
             answer questions - click submit
                 toast message appears
         2. connect up logic for workflows
-            button flows to change pages
+            button flows to change pages - done
             make name persistant - done
             capture toggle changes for radio buttons and checkboxes
             capture chosen answers
             capture text answers
-            create function to validate answer to question
+            create function to validate answers to questions
                 text answers
                 radio button answers
                 checkbox answers
         3. make data persistant
         4. add support for landscape layout
+        5. Style Toast message
+        6. add player name to Toast
+        7. add player score to Toast
+        8. create function to determine score
 
         ---------bonus points-------------
-        5. add BEFORE button instead of just NEXT buttons
-        6. load questions and answers from a data file
-        7. keep track of scores for players
+        --> add BEFORE button instead of just NEXT buttons
+        --> load questions and answers from a data file
+        --> keep track of scores for players
             top 5 scores (like in an older arcade game)
             Specific Player results history
-        8. workflow additions
+        --> workflow additions
             click start game - don't allow starting a game without a player name
             after toast message the sumbit button becomes two buttons
                     PLAY AGAIN

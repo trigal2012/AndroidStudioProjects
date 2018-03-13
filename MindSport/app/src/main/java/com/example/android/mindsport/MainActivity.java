@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.widget.Button;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -70,17 +72,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.next2:
                 Log.i("tag", "next2 button pressed. player name is: " + playerName);
                 updateLayout(R.id.questions, R.layout.question3);
-                str = this.getResources().getString(R.string.next);
+                str = this.getResources().getString(R.string.submit);
                 updateButton(str, R.id.next2, R.id.submit);
                 break;
 
             case R.id.submit:
                 Log.i("tag", "submit button pressed");
-                Toast toast = Toast.makeText(getApplicationContext(), "Simple Toast In Android", Toast.LENGTH_LONG); // initiate the Toast with context, message and duration for the Toast
-                toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, 0, 0);     // set gravity for the Toast.
-                toast.show(); // display the Toast
+                displayToast();
                 break;
-
 
             default:
                 break;
@@ -113,5 +112,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
         newBtnValue.setId(newId);
     }
 
+    private void displayToast(){
+        // create instance
+        Toast toast = new Toast(getApplicationContext());
 
+        // inflate custom view
+        View view = getLayoutInflater().inflate(R.layout.toast, null);
+
+        // set custom view
+        toast.setView(view);
+
+        // set duration
+        toast.setDuration(Toast.LENGTH_LONG);
+
+        // set position
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_VERTICAL, 0, 32);
+
+    // show toast
+        toast.show();
+    }
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.mindsport.MainActivity">
+
+    <ImageView
+        style="@style/image"
+        android:contentDescription="@string/contentDescription" />
+
+    <TextView
+        android:id="@+id/gameName"
+        style="@style/title" />
+
+    <LinearLayout
+        android:id="@+id/questions"
+        style="@style/linearLayout">
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="32dp"
+            android:gravity="center"
+            android:textColor="@color/purple"
+            android:textSize="30sp"
+            android:background="@color/white"
+            android:text="Hey Bobbie, I hoped you had fun! You correctly answered 5 out of 7."/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/start"
+        style="@style/button"
+        android:text="@string/startOver"/>
+
+
+</RelativeLayout>

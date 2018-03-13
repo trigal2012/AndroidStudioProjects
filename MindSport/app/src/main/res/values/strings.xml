@@ -41,4 +41,18 @@
     <string name="submit">SUBMIT</string>
     <string name="startOver">PLAY AGAIN</string>
 
+    //Toast Message Strings
+    <string name="salutation">Hey </string>
+    <string name="thanks">Thanks for playing!</string>
+
+    <!--use when score is below 80%-->
+    <string name="scoreMsg">You scored </string>
+    <string name="youHave">You have</string>
+    <string name="correct">correct</string>
+    <string name="incorrect">incorrect</string>
+    <string name="answer">answer</string>
+
+    <!--use when score is 80% or higher-->
+    <string name="congats">Congrats!</string>
+
 </resources>
