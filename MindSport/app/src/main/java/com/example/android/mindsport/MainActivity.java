@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Button;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.LayoutInflater;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.EditText;
@@ -32,6 +34,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     String a7_2 = "f";
     String a7_3 = "f";
     String a7 = "";
+    String toastMessage = "";
     int score = 0;
 
 
@@ -173,7 +176,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         if(a7.equals("tft"))
             score += 1;
-        Log.i("tag", "the score is: " + score);
     }
 
     private void getPlayerName(){
@@ -182,9 +184,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Log.i("tag", "start button pressed. player name is: " + playerName);
     }
 
-    private void getTextAnswer(String answerNum, int answerId){
+    private String getTextAnswer(String answerNum, int answerId){
         EditText tempAnswer = (EditText) findViewById(answerId);
         answerNum = tempAnswer.getText().toString();
+        return answerNum;
     }
 
     @Override
@@ -202,8 +205,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.next1:
-                getTextAnswer(a1, R.id.a1);
-                getTextAnswer(a2, R.id.a2);
+                a1 = getTextAnswer(a1, R.id.a1);
+                Log.i("tag", a1);
+                a2 = getTextAnswer(a2, R.id.a2);
+                Log.i("tag", a2);
                 updateLayout(R.id.questions, R.layout.question2);
                 str = this.getResources().getString(R.string.next);
                 updateButton(str, R.id.next1, R.id.next2);
@@ -217,8 +222,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.submit:
+                toastMessage = "";
                 determineScore();
-                displayToast();
+                createMessage();
+                displayToast(toastMessage);
+                Button btn = (Button)findViewById(R.id.submit);
+                btn.setEnabled(false);
+                btn.setBackgroundColor(getResources().getColor(R.color.darkGray));
+                btn.setTextColor(getResources().getColor(R.color.lightGray));
+
                 break;
 
             default:
@@ -233,7 +245,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void updateLayout(int currentLayout, int newLayout){
-        //remove the Player Name view
+        //remove views no longer needed
         LinearLayout removeMe = (LinearLayout) findViewById(currentLayout);
         removeMe.removeAllViewsInLayout();
 
@@ -252,25 +264,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
         newBtnValue.setId(newId);
     }
 
-    private void displayToast(){
-        // create instance
-        Toast toast = new Toast(getApplicationContext());
-
-        // inflate custom view
-        View view = getLayoutInflater().inflate(R.layout.toast, null);
-
-        // set custom view
-        toast.setView(view);
-
-        // set duration
-        toast.setDuration(Toast.LENGTH_LONG);
-
-        // set position
-        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_VERTICAL, 0, 32);
-
-    // show toast
-        toast.show();
-
-
+    private void createMessage(){
+        toastMessage += getString(R.string.salutation) + " " + playerName + ",\n";
+        toastMessage += getString(R.string.thanks) + "\n";
+        toastMessage += getString(R.string.youHave) + " " + score + " of 6 " + getString(R.string.correct) + " " + getString(R.string.answer);
     }
+
+    private void displayToast(String message){
+
+        //get the LayoutInflater and inflate the custom_toast layout
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast, null);
+
+        //get the TextView from the custom_toast layout
+        TextView text = (TextView) layout.findViewById(R.id.txtMessage);
+        text.setText(message);
+
+        //create the toast object, set display duration,
+        //set the view as layout that's inflated above and then call show()
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+
 }

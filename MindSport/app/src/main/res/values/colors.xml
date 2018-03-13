@@ -8,5 +8,7 @@
     <color name="colorAccentTrans3">#D93EBEFD</color>
     <color name="white">#FFFFFF</color>
     <color name="purple">#8033FF</color>
+    <color name="darkGray">#424344</color>
+    <color name="lightGray">#939496</color>
 
 </resources>

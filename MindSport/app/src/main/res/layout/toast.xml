@@ -10,5 +10,4 @@
     android:gravity="center"
     android:textColor="@color/purple"
     android:textSize="30sp"
-    android:background="@color/white"
-    android:text="@string/congats"/>
+    android:background="@color/white" />

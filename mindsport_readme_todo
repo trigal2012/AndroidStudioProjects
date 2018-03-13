@@ -39,12 +39,13 @@ a7 - tff
 
         ------remaining work items---------
         4. add support for landscape layout
-        6. add player name to Toast
-        7. add player score to Toast
+        6. add player name to Toast - done
+        7. add player score to Toast - done
         9. refactor code
 
 
         ---------bonus points-------------
+        --> add support for a 2nd language
         --> add BEFORE button instead of just NEXT buttons
         --> load questions and answers from a data file
         --> keep track of scores for players
