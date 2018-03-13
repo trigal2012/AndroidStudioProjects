@@ -22,8 +22,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     String playerName = "";
     String a1 = "";
     String a2 = "";
-    int correctAns = 0;
-    int incorrectAns = 0;
     String a4 = "";
     String a5 = "";
     String a6_1 = "f";
@@ -74,10 +72,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.a4_1:
                 if (checked)
                     Log.d("tag", "onRadioButtonClicked: incorrect");
+                a4 = "";
                 break;
             case R.id.a4_2:
                 if (checked)
                     Log.d("tag", "onRadioButtonClicked: incorrect");
+                a4 = "";
                 break;
             case R.id.a4_3:
                 if (checked)
@@ -87,10 +87,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.a5_1:
                 if (checked)
                     Log.d("tag", "onRadioButtonClicked: incorrect");
+                a5 = "";
                 break;
             case R.id.a5_2:
                 if (checked)
                     Log.d("tag", "onRadioButtonClicked: incorrect");
+                a5 = "";
                 break;
             case R.id.a5_3:
                 if (checked)
@@ -166,12 +168,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         a6 = a6_1 + a6_2 + a6_3;
         a7 = a7_1 + a7_2 + a7_3;
-        if(a6.equals("ftf")){
+        if(a6.equals("ttt")){
             score += 1;
         }
-        if(a7.equals("tff"))
+        if(a7.equals("tft"))
             score += 1;
         Log.i("tag", "the score is: " + score);
+    }
+
+    private void getPlayerName(){
+        EditText tempPlayerName = (EditText) findViewById(R.id.pname);
+        playerName = tempPlayerName.getText().toString();
+        Log.i("tag", "start button pressed. player name is: " + playerName);
+    }
+
+    private void getTextAnswer(String answerNum, int answerId){
+        EditText tempAnswer = (EditText) findViewById(answerId);
+        answerNum = tempAnswer.getText().toString();
     }
 
     @Override
@@ -181,9 +194,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             //Button listeners
             case R.id.start:
-                EditText tempPlayerName = (EditText) findViewById(R.id.pname);
-                playerName = tempPlayerName.getText().toString();
-                Log.i("tag", "start button pressed. player name is: " + playerName);
+                getPlayerName();
                 updateLayout(R.id.questions, R.layout.question1);
                 updateDisplay(R.id.gameName, playerName);
                 String str = this.getResources().getString(R.string.next);
@@ -191,24 +202,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.next1:
-                EditText tempAnswer = (EditText) findViewById(R.id.a1);
-                a1 = tempAnswer.getText().toString();
-                tempAnswer = (EditText) findViewById(R.id.a2);
-                a2 = tempAnswer.getText().toString();
-                Log.i("tag", "next1 button pressed. player name is: " + playerName);
-                Log.i("tag", "next1 button pressed. a1 is: " + a1);
-                Log.i("tag", "next1 button pressed. a2 is: " + a2);
+                getTextAnswer(a1, R.id.a1);
+                getTextAnswer(a2, R.id.a2);
                 updateLayout(R.id.questions, R.layout.question2);
                 str = this.getResources().getString(R.string.next);
                 updateButton(str, R.id.next1, R.id.next2);
                 break;
 
             case R.id.next2:
-                Log.i("tag", "next2 button pressed. player name is: " + playerName);
-                Log.i("tag", "next2 button pressed. a1 is: " + a1);
-                Log.i("tag", "next2 button pressed. a2 is: " + a2);
-                Log.i("tag", "next2 button pressed. a4 is: " + a4);
-                Log.i("tag", "next2 button pressed. a5 is: " + a5);
+
                 updateLayout(R.id.questions, R.layout.question3);
                 str = this.getResources().getString(R.string.submit);
                 updateButton(str, R.id.next2, R.id.submit);
@@ -216,13 +218,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             case R.id.submit:
                 determineScore();
-                Log.i("tag", "submit button pressed. player name is: " + playerName);
-                Log.i("tag", "submit button pressed. a1 is: " + a1);
-                Log.i("tag", "submit button pressed. a2 is: " + a2);
-                Log.i("tag", "submit button pressed. a4 is: " + a4);
-                Log.i("tag", "submit button pressed. a5 is: " + a5);
-                Log.i("tag", "submit button pressed. a6 is: " + a6);
-                Log.i("tag", "submit button pressed. a7 is: " + a7);
                 displayToast();
                 break;
 
@@ -275,5 +270,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     // show toast
         toast.show();
+
+
     }
 }
