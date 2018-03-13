@@ -1,0 +1,56 @@
+
+
+
+
+        // Show toast message when button is clicked
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(getApplicationContext(), "Simple Toast In Android", Toast.LENGTH_LONG); // initiate the Toast with context, message and duration for the Toast
+                toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, 0, 0);     // set gravity for the Toast.
+                toast.show(); // display the Toast
+            }
+        });
+
+        mindsport project to-do:
+        0. add Button Styles - done
+        0.1 add EditText Style - done
+        1. define workflows - done
+            app starts
+            enter player name
+            click start game - done
+                first set of questions appear
+            answer questions - click next
+                second set of questions appear
+            answer questions - click next
+                third set of questions appear
+            answer questions - click submit
+                toast message appears
+        2. connect up logic for workflows
+            button flows to change pages
+            make name persistant - done
+            capture toggle changes for radio buttons and checkboxes
+            capture chosen answers
+            capture text answers
+            create function to validate answer to question
+                text answers
+                radio button answers
+                checkbox answers
+        3. make data persistant
+        4. add support for landscape layout
+
+        ---------bonus points-------------
+        5. add BEFORE button instead of just NEXT buttons
+        6. load questions and answers from a data file
+        7. keep track of scores for players
+            top 5 scores (like in an older arcade game)
+            Specific Player results history
+        8. workflow additions
+            click start game - don't allow starting a game without a player name
+            after toast message the sumbit button becomes two buttons
+                    PLAY AGAIN
+                    RESET
+                click play again button
+                    goes to screen with first set of questions, uses current player name, all othr values are cleared
+                click reset button
+                    goes to home screen with all data reset 
