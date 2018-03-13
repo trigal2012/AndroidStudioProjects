@@ -1,16 +1,13 @@
 
+answers:
+a1 - Macbeth - https://en.wikipedia.org/wiki/The_Scottish_Play
+a2 - I - https://en.wikipedia.org/wiki/Green_Eggs_and_Ham
+a3 - 
+q4 - hamlet - https://en.wikipedia.org/wiki/To_be,_or_not_to_be
+q5 - blind date - https://en.wikipedia.org/wiki/Lucy_and_Ricky_Ricardo
+a6 - ftf
+a7 - tff
 
-
-
-        // Show toast message when button is clicked
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Simple Toast In Android", Toast.LENGTH_LONG); // initiate the Toast with context, message and duration for the Toast
-                toast.setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT, 0, 0);     // set gravity for the Toast.
-                toast.show(); // display the Toast
-            }
-        });
 
         mindsport project to-do:
         0. add Button Styles - done
@@ -29,19 +26,23 @@
         2. connect up logic for workflows
             button flows to change pages - done
             make name persistant - done
-            capture toggle changes for radio buttons and checkboxes
-            capture chosen answers
-            capture text answers
+            capture toggle changes for radio buttons and checkboxes - done
+            capture chosen answers - done
+            capture text answers - done
             create function to validate answers to questions
-                text answers
-                radio button answers
-                checkbox answers
-        3. make data persistant
+                text answers - done
+                radio button answers - done
+                checkbox answers - done
+        3. make data persistant - done
+        5. Style Toast message - done
+        8. create function to determine score - done
+
+        ------remaining work items---------
         4. add support for landscape layout
-        5. Style Toast message
         6. add player name to Toast
         7. add player score to Toast
-        8. create function to determine score
+        9. refactor code
+
 
         ---------bonus points-------------
         --> add BEFORE button instead of just NEXT buttons
