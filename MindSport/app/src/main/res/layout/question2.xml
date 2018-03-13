@@ -13,17 +13,17 @@
 
         <RadioButton
             android:id="@+id/a4_1"
-            style="@style/answerBaseFormat"
+            style="@style/answerFormat2"
             android:text="@string/a4_1" />
 
         <RadioButton
             android:id="@+id/a4_2"
-            style="@style/answerBaseFormat"
+            style="@style/answerFormat2"
             android:text="@string/a4_2" />
 
         <RadioButton
             android:id="@+id/a4_3"
-            style="@style/answerBaseFormat"
+            style="@style/answerFormat2"
             android:text="@string/a4_3" />
 
     </RadioGroup>
@@ -37,17 +37,17 @@
 
         <RadioButton
             android:id="@+id/a5_1"
-            style="@style/answerBaseFormat"
+            style="@style/answerFormat2"
             android:text="@string/a5_1" />
 
         <RadioButton
             android:id="@+id/a5_2"
-            style="@style/answerBaseFormat"
+            style="@style/answerFormat2"
             android:text="@string/a5_2" />
 
         <RadioButton
             android:id="@+id/a5_3"
-            style="@style/answerBaseFormat"
+            style="@style/answerFormat2"
             android:text="@string/a5_3" />
 
     </RadioGroup>

@@ -9,7 +9,7 @@
     <string name="q1">Which Shakespeare play is better known as \'The Scottish Play\'?</string>
     <string name="q2">Who likes (or not) green eggs and ham?</string>
     <string name="q3">Who goes to the apothecary and drinks some poison?</string>
-    <string name="q4">This begins, \'To be or not to be...\' What is the play?</string>
+    <string name="q4">\'To be or not to be...\' What is the play?</string>
     <string name="q5">Where did Lucy and Ricky meet?</string>
     <string name="q6">Select the true statement(s):</string>
     <string name="q7">Select the false statement(s):</string>
@@ -24,8 +24,8 @@
 
     <string name="a5_1">Church</string>
     <string name="a5_2">Dance Hall</string>
-    <string name="a5_3">Beach Party</string>
-    <string name="a5_4">Blind Date</string>
+    <string name="a5_3">Blind Date</string>
+    <string name="a5_4">Beach Party</string>
 
     <string name="a6_1">I love PB&amp;J sandwiches</string>
     <string name="a6_2">Puppies are the best!</string>

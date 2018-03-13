@@ -57,6 +57,12 @@
     <style name="answerFormat1" parent="answerBaseFormat">
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
+        <item name="android:onClick">onCheckboxClicked</item>
+    </style>
+
+    <style name="answerFormat2" parent="answerBaseFormat">
+        <item name="android:onClick">onRadioButtonClicked"</item>
+
     </style>
 
     <style name="answerText" parent="answerFormat1">
