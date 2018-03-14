@@ -1,14 +1,11 @@
 package com.example.android.mindsport;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.widget.Button;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -18,7 +15,7 @@ import android.widget.TextView;
 
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Game Data
     String playerName = "";
@@ -36,6 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     String a7 = "";
     String toastMessage = "";
     int score = 0;
+    int page = 0;
 
 
     @Override
@@ -43,6 +41,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         outState.putString("playerName", playerName);
         outState.putString("a1", a1);
         outState.putString("a2", a2);
+        outState.putString("a4", a4);
+        outState.putString("a5", a5);
+        outState.putString("a6", a6);
+        outState.putString("a7", a7);
+        outState.putInt("score", score);
+        outState.putInt("page", page);
 
         super.onSaveInstanceState(outState);
     }
@@ -56,6 +60,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             playerName = savedInstanceState.getString("playerName");
             a1 = savedInstanceState.getString("a1");
             a2 = savedInstanceState.getString("a2");
+            a4 = savedInstanceState.getString("a4");
+            a5 = savedInstanceState.getString("a5");
+            a6 = savedInstanceState.getString("a6");
+            a7 = savedInstanceState.getString("a7");
+            score = savedInstanceState.getInt("score");
+            page = savedInstanceState.getInt("page");
+
         }
         setContentView(R.layout.activity_main);
 
@@ -65,6 +76,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         start.setOnClickListener(this);
 
     }
+
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
@@ -202,6 +214,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 updateDisplay(R.id.gameName, playerName);
                 String str = this.getResources().getString(R.string.next);
                 updateButton(str, R.id.start, R.id.next1);
+                page = 1;
                 break;
 
             case R.id.next1:
@@ -212,6 +225,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 updateLayout(R.id.questions, R.layout.question2);
                 str = this.getResources().getString(R.string.next);
                 updateButton(str, R.id.next1, R.id.next2);
+                page = 2;
                 break;
 
             case R.id.next2:
@@ -219,6 +233,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 updateLayout(R.id.questions, R.layout.question3);
                 str = this.getResources().getString(R.string.submit);
                 updateButton(str, R.id.next2, R.id.submit);
+                page = 3;
                 break;
 
             case R.id.submit:
@@ -226,11 +241,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 determineScore();
                 createMessage();
                 displayToast(toastMessage);
+                TextView title = (TextView)findViewById(R.id.gameName);
+                title.setText("GAME OVER");
                 Button btn = (Button)findViewById(R.id.submit);
                 btn.setEnabled(false);
                 btn.setBackgroundColor(getResources().getColor(R.color.darkGray));
                 btn.setTextColor(getResources().getColor(R.color.lightGray));
-
+                disableCheckbox(R.id.a6_1);
+                disableCheckbox(R.id.a6_2);
+                disableCheckbox(R.id.a6_3);
+                disableCheckbox(R.id.a7_1);
+                disableCheckbox(R.id.a7_2);
+                disableCheckbox(R.id.a7_3);
                 break;
 
             default:
@@ -286,6 +308,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+    }
+
+    private void disableCheckbox(int chkBoxId){
+        CheckBox checkBox = (CheckBox)findViewById(chkBoxId);
+        checkBox.setEnabled(false);
     }
 
 }
