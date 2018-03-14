@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore state members from saved instance
         if (savedInstanceState != null) {
             playerName = savedInstanceState.getString("playerName");
             a1 = savedInstanceState.getString("a1");
@@ -68,8 +68,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             page = savedInstanceState.getInt("page");
 
         }
-        setContentView(R.layout.activity_main);
+    }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         //setting up buttons to call the onClick method when app loads
         Button start = findViewById(R.id.start);
