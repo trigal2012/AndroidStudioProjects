@@ -1,67 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/questions"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:orientation="horizontal">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.mindsport.MainActivity">
+
+    <ImageView
+        style="@style/image"
+        android:contentDescription="@string/contentDescription" />
+
+    <TextView
+        android:id="@+id/gameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/whiteish"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/title"
+        android:textColor="@color/colorAccent3"
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:id="@+id/questions"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/q7"
-            style="@style/questionFormat1"
-            android:text="@string/q7" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/a7_1"
-            style="@style/answerFormat1"
-            android:text="@string/a7_1" />
+            <TextView
+                android:id="@+id/q7"
+                style="@style/questionFormat1"
+                android:text="@string/q7" />
 
-        <CheckBox
-            android:id="@+id/a7_2"
-            style="@style/answerFormat1"
-            android:text="@string/a7_2" />
+            <CheckBox
+                android:id="@+id/a7_1"
+                style="@style/answerFormat1"
+                android:text="@string/a7_1" />
 
-        <CheckBox
-            android:id="@+id/a7_3"
-            style="@style/answerFormat1"
-            android:text="@string/a7_3" />
+            <CheckBox
+                android:id="@+id/a7_2"
+                style="@style/answerFormat1"
+                android:text="@string/a7_2" />
+
+            <CheckBox
+                android:id="@+id/a7_3"
+                style="@style/answerFormat1"
+                android:text="@string/a7_3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/q6"
+                style="@style/questionFormat1"
+                android:text="@string/q6" />
+
+            <CheckBox
+                android:id="@+id/a6_1"
+                style="@style/answerFormat1"
+                android:text="@string/a6_1" />
+
+            <CheckBox
+                android:id="@+id/a6_2"
+                style="@style/answerFormat1"
+                android:text="@string/a6_2" />
+
+            <CheckBox
+                android:id="@+id/a6_3"
+                style="@style/answerFormat1"
+                android:text="@string/a6_3" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/submit"
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccentTrans3"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
 
-        <TextView
-            android:id="@+id/q6"
-            style="@style/questionFormat1"
-            android:text="@string/q6" />
-
-        <CheckBox
-            android:id="@+id/a6_1"
-            style="@style/answerFormat1"
-            android:text="@string/a6_1" />
-
-        <CheckBox
-            android:id="@+id/a6_2"
-            style="@style/answerFormat1"
-            android:text="@string/a6_2" />
-
-        <CheckBox
-            android:id="@+id/a6_3"
-            style="@style/answerFormat1"
-            android:text="@string/a6_3" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
 

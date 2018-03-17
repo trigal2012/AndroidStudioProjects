@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    style="@style/linearLayout">
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/q1"
+    style="@style/questionFormat1"
+    android:text="@string/q1"/>
+
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/a1"
+    style="@style/answerText"/>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/q2"
+    style="@style/questionFormat1"
+    android:text="@string/q2"/>
+
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/a2"
+    style="@style/answerText"/>
+</LinearLayout>

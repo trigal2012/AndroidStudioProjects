@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.LayoutInflater;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -33,8 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String a7 = "";
     String toastMessage = "";
     int score = 0;
-    int page = 0;
-
+    int layoutId = R.layout.activity_main;
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         outState.putString("a6", a6);
         outState.putString("a7", a7);
         outState.putInt("score", score);
-        outState.putInt("page", page);
+        outState.putInt("layoutId", layoutId);
 
         super.onSaveInstanceState(outState);
     }
@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             a6 = savedInstanceState.getString("a6");
             a7 = savedInstanceState.getString("a7");
             score = savedInstanceState.getInt("score");
-            page = savedInstanceState.getInt("page");
+            layoutId = savedInstanceState.getInt("layoutId");
+            setContentView(layoutId);
 
         }
     }
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(layoutId);
 
         //setting up buttons to call the onClick method when app loads
         Button start = findViewById(R.id.start);
@@ -81,45 +82,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.a4_1:
-                if (checked)
-                    Log.d("tag", "onRadioButtonClicked: incorrect");
-                a4 = "";
-                break;
-            case R.id.a4_2:
-                if (checked)
-                    Log.d("tag", "onRadioButtonClicked: incorrect");
-                a4 = "";
-                break;
-            case R.id.a4_3:
-                if (checked)
-                    Log.d("tag", "onRadioButtonClicked: correct");
-                a4 = "a4_3";
-                break;
-            case R.id.a5_1:
-                if (checked)
-                    Log.d("tag", "onRadioButtonClicked: incorrect");
-                a5 = "";
-                break;
-            case R.id.a5_2:
-                if (checked)
-                    Log.d("tag", "onRadioButtonClicked: incorrect");
-                a5 = "";
-                break;
-            case R.id.a5_3:
-                if (checked)
-                    Log.d("tag", "onRadioButtonClicked: correct");
-                a5 = "a5_3";
-                break;
-        }
-    }
 
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
@@ -172,40 +134,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void determineScore(){
-        if (a1.toLowerCase().equals("macbeth")){
-            score += 1;
-        }
-        if (a2.toLowerCase().equals("i")){
-            score += 1;
-        }
-        if(a4.toLowerCase().equals("a4_3")){
-            score += 1;
-        }
-        if(a5.toLowerCase().equals("a5_3")){
-            score += 1;
-        }
-        a6 = a6_1 + a6_2 + a6_3;
-        a7 = a7_1 + a7_2 + a7_3;
-        if(a6.equals("ttt")){
-            score += 1;
-        }
-        if(a7.equals("tft"))
-            score += 1;
-    }
-
-    private void getPlayerName(){
-        EditText tempPlayerName = (EditText) findViewById(R.id.pname);
-        playerName = tempPlayerName.getText().toString();
-        Log.i("tag", "start button pressed. player name is: " + playerName);
-    }
-
-    private String getTextAnswer(String answerNum, int answerId){
-        EditText tempAnswer = (EditText) findViewById(answerId);
-        answerNum = tempAnswer.getText().toString();
-        return answerNum;
-    }
-
     @Override
     public void onClick(View v) {
 
@@ -214,33 +142,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Button listeners
             case R.id.start:
                 getPlayerName();
-                updateLayout(R.id.questions, R.layout.question1);
+                layoutId = R.layout.question1;
+                setContentView(layoutId);
                 updateDisplay(R.id.gameName, playerName);
-                String str = this.getResources().getString(R.string.next);
-                updateButton(str, R.id.start, R.id.next1);
-                page = 1;
                 break;
 
             case R.id.next1:
-                a1 = getTextAnswer(a1, R.id.a1);
+                a1 = getAnswer(a1, R.id.a1);
                 Log.i("tag", a1);
-                a2 = getTextAnswer(a2, R.id.a2);
+                a2 = getAnswer(a2, R.id.a2);
                 Log.i("tag", a2);
-                updateLayout(R.id.questions, R.layout.question2);
-                str = this.getResources().getString(R.string.next);
-                updateButton(str, R.id.next1, R.id.next2);
-                page = 2;
+                layoutId = (R.layout.question2);
+                setContentView(layoutId);
+                updateDisplay(R.id.gameName, playerName);
                 break;
 
             case R.id.next2:
-
-                updateLayout(R.id.questions, R.layout.question3);
-                str = this.getResources().getString(R.string.submit);
-                updateButton(str, R.id.next2, R.id.submit);
-                page = 3;
+                Log.i("tag", a4);
+                Log.i("tag", a5);
+                layoutId=(R.layout.question3);
+                setContentView(layoutId);
+                updateDisplay(R.id.gameName, playerName);
                 break;
 
             case R.id.submit:
+                a6 = a6_1 + a6_2 + a6_3;
+                a7 = a7_1 + a7_2 + a7_3;
+                Log.i("tag", a6);
+                Log.i("tag", a7);
                 toastMessage = "";
                 determineScore();
                 createMessage();
@@ -263,6 +192,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
+    }
+
+    private void determineScore(){
+        if (a1.toLowerCase().equals("macbeth")){
+            score += 1;
+        }
+        if (a2.toLowerCase().equals("i")){
+            score += 1;
+        }
+        if(a4.toLowerCase().equals("a4_3")){
+            score += 1;
+        }
+        if(a5.toLowerCase().equals("a5_3")){
+            score += 1;
+        }
+        if(a6.equals("ttt")){
+            score += 1;
+        }
+        if(a7.equals("tft"))
+            score += 1;
+    }
+
+    private void getPlayerName(){
+        EditText tempPlayerName = (EditText) findViewById(R.id.pname);
+        playerName = tempPlayerName.getText().toString();
+        Log.i("tag", "start button pressed. player name is: " + playerName);
+    }
+
+    private String getAnswer(String answerNum, int answerId){
+        EditText tempAnswer = (EditText) findViewById(answerId);
+        answerNum = tempAnswer.getText().toString();
+        return answerNum;
     }
 
     private void updateDisplay(int viewID, String textValue){

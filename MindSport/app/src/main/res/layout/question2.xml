@@ -1,55 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/questions"
-    style="@style/linearLayout">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.mindsport.MainActivity">
+
+    <ImageView
+        style="@style/image"
+        android:contentDescription="@string/contentDescription" />
 
     <TextView
-        android:id="@+id/q4"
-        style="@style/questionFormat2"
-        android:text="@string/q4" />
+        android:id="@+id/gameName"
+        style="@style/title" />
 
-    <RadioGroup style="@style/answerFormat1">
 
-        <RadioButton
-            android:id="@+id/a4_1"
-            style="@style/answerFormat2"
-            android:text="@string/a4_1" />
+    <LinearLayout
+        android:id="@+id/questions"
+        style="@style/linearLayout">
 
-        <RadioButton
-            android:id="@+id/a4_2"
-            style="@style/answerFormat2"
-            android:text="@string/a4_2" />
+        <TextView
+            android:id="@+id/q4"
+            style="@style/questionFormat2"
+            android:text="@string/q4" />
 
-        <RadioButton
-            android:id="@+id/a4_3"
-            style="@style/answerFormat2"
-            android:text="@string/a4_3" />
+        <RadioGroup
+            android:id="@+id/rg4"
+            style="@style/answerFormat1">
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/a4_1"
+                style="@style/answerBaseFormat"
+                android:text="@string/a4_1" />
 
-    <TextView
-        android:id="@+id/q5"
-        style="@style/questionFormat2"
-        android:text="@string/q5" />
+            <RadioButton
+                android:id="@+id/a4_2"
+                style="@style/answerBaseFormat"
+                android:text="@string/a4_2" />
 
-    <RadioGroup style="@style/answerFormat1">
+            <RadioButton
+                android:id="@+id/a4_3"
+                style="@style/answerBaseFormat"
+                android:text="@string/a4_3" />
 
-        <RadioButton
-            android:id="@+id/a5_1"
-            style="@style/answerFormat2"
-            android:text="@string/a5_1" />
+        </RadioGroup>
 
-        <RadioButton
-            android:id="@+id/a5_2"
-            style="@style/answerFormat2"
-            android:text="@string/a5_2" />
+        <TextView
+            android:id="@+id/q5"
+            style="@style/questionFormat2"
+            android:text="@string/q5" />
 
-        <RadioButton
-            android:id="@+id/a5_3"
-            style="@style/answerFormat2"
-            android:text="@string/a5_3" />
+        <RadioGroup
+            android:id="@+id/rg5"
+            style="@style/answerFormat1">
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/a5_1"
+                style="@style/answerBaseFormat"
+                android:text="@string/a5_1" />
 
-</LinearLayout>
+            <RadioButton
+                android:id="@+id/a5_2"
+                style="@style/answerBaseFormat"
+                android:text="@string/a5_2" />
+
+            <RadioButton
+                android:id="@+id/a5_3"
+                style="@style/answerBaseFormat"
+                android:text="@string/a5_3" />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next2"
+        android:onClick="onClick"
+        style="@style/button"
+        android:text="@string/next" />
+</RelativeLayout>
