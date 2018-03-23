@@ -40,7 +40,12 @@ public class MainActivity extends AppCompatActivity {
         }
         if(layoutId == R.layout.question3){
             getCBAnswers();
+        }
+        if(layoutId == R.layout.game_over){
             determineScore();
+        }
+        if(layoutId == R.layout.activity_main){
+            resetVars();
         }
         outState.putInt("layoutId", layoutId);
         outState.putString("playerName", playerName);
@@ -56,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         if (savedInstanceState != null && (savedInstanceState.getInt("layoutId") != R.layout.activity_main)) {
             Log.i("tag", "on create if layoutid is: " + layoutId);
             layoutId = savedInstanceState.getInt("layoutId");
@@ -69,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             a7 = savedInstanceState.getString("a7");
             score = savedInstanceState.getInt("score");
         }
+        super.onCreate(savedInstanceState);
         setContentView(layoutId);
 
     }
@@ -91,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.submit:
                 getCBAnswers();
-                determineScore();
                 changeLayout(R.layout.game_over, getString(R.string.gameOver));
+                determineScore();
                 createMessage();
                 displayToast(toastMessage);
                 break;
@@ -235,27 +241,6 @@ public class MainActivity extends AppCompatActivity {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
-    }
-
-    private void disableCheckbox(int checkboxId){
-        CheckBox checkBox = (CheckBox)findViewById(checkboxId);
-        checkBox.setEnabled(false);
-    }
-
-    private void disableAllCheckboxes(){
-        disableCheckbox(R.id.a6_1);
-        disableCheckbox(R.id.a6_2);
-        disableCheckbox(R.id.a6_3);
-        disableCheckbox(R.id.a7_1);
-        disableCheckbox(R.id.a7_2);
-        disableCheckbox(R.id.a7_3);
-    }
-
-    private void disableSubmitBtn(){
-        Button btn = (Button)findViewById(R.id.submit);
-        btn.setEnabled(false);
-        btn.setBackgroundColor(getResources().getColor(R.color.darkGray));
-        btn.setTextColor(getResources().getColor(R.color.lightGray));
     }
 
 }
