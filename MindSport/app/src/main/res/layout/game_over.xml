@@ -16,24 +16,11 @@
     <LinearLayout
         android:id="@+id/questions"
         style="@style/linearLayout">
-
-        <TextView
-            android:id="@+id/txtMessage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="32dp"
-            android:gravity="center"
-            android:textColor="@color/purple"
-            android:textSize="30sp"
-            android:background="@color/white"
-            android:text="Hey Bobbie, I hoped you had fun! You correctly answered 5 out of 7."/>
-
     </LinearLayout>
 
-
     <Button
-        android:id="@+id/start"
+        android:id="@+id/playAgain"
+        android:onClick="onButtonClick"
         style="@style/button"
         android:text="@string/startOver"/>
 

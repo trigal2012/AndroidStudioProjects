@@ -62,7 +62,7 @@
 
     <Button
         android:id="@+id/submit"
-        android:onClick="onClick"
+        android:onClick="onButtonClick"
         style="@style/button"
         android:text="@string/submit" />
 </RelativeLayout>

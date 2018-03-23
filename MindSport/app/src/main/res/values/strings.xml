@@ -40,6 +40,7 @@
     <string name="next">NEXT</string>
     <string name="submit">SUBMIT</string>
     <string name="startOver">PLAY AGAIN</string>
+    <string name="gameOver">GAME OVER</string>
 
     //Toast Message Strings
     <string name="salutation">Hey</string>

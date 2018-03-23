@@ -44,21 +44,23 @@
                 style="@style/questionFormat2"
                 android:text="@string/q4" />
 
-            <RadioGroup style="@style/answerFormat1">
+            <RadioGroup
+                android:id="@+id/rg4"
+                style="@style/answerFormat1">
 
                 <RadioButton
                     android:id="@+id/a4_1"
-                    style="@style/answerFormat2"
+                    style="@style/answerBaseFormat"
                     android:text="@string/a4_1" />
 
                 <RadioButton
                     android:id="@+id/a4_2"
-                    style="@style/answerFormat2"
+                    style="@style/answerBaseFormat"
                     android:text="@string/a4_2" />
 
                 <RadioButton
                     android:id="@+id/a4_3"
-                    style="@style/answerFormat2"
+                    style="@style/answerBaseFormat"
                     android:text="@string/a4_3" />
 
             </RadioGroup>
@@ -76,21 +78,23 @@
                 style="@style/questionFormat2"
                 android:text="@string/q5" />
 
-            <RadioGroup style="@style/answerFormat1">
+            <RadioGroup
+                android:id="@+id/rg5"
+                style="@style/answerFormat1">
 
                 <RadioButton
                     android:id="@+id/a5_1"
-                    style="@style/answerFormat2"
+                    style="@style/answerBaseFormat"
                     android:text="@string/a5_1" />
 
                 <RadioButton
                     android:id="@+id/a5_2"
-                    style="@style/answerFormat2"
+                    style="@style/answerBaseFormat"
                     android:text="@string/a5_2" />
 
                 <RadioButton
                     android:id="@+id/a5_3"
-                    style="@style/answerFormat2"
+                    style="@style/answerBaseFormat"
                     android:text="@string/a5_3" />
 
             </RadioGroup>
@@ -101,7 +105,7 @@
 
     <Button
         android:id="@+id/next2"
-        android:onClick="onClick"
+        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

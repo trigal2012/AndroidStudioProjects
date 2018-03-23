@@ -25,7 +25,8 @@
 
         <EditText
             android:id="@+id/a1"
-            style="@style/answerText" />
+            style="@style/answerText"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/q2"
@@ -34,14 +35,15 @@
 
         <EditText
             android:id="@+id/a2"
-            style="@style/answerText" />
+            style="@style/answerText"
+            android:maxLines="1"/>
 
     </LinearLayout>
 
 
     <Button
         android:id="@+id/next1"
-        android:onClick="onClick"
+        android:onClick="onButtonClick"
         style="@style/button"
         android:text="@string/next"/>
 </RelativeLayout>
