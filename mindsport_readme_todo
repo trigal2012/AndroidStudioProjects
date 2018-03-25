@@ -93,12 +93,16 @@ a7 - tff
 
 
         ---------bonus points-------------
+        -->fix up toast formatting - done
+        --> move findByid into Create method - not needed
         --> add support for a 2nd language
-        --> add BEFORE button instead of just NEXT buttons
-        --> load questions and answers from a data file
+        --> add dimensions file
+        --> add "Share my score" feature
         --> keep track of scores for players
             top 5 scores (like in an older arcade game)
             Specific Player results history
+        --> add BEFORE button instead of just NEXT buttons
+        --> load questions and answers from a data file
         --> workflow additions
             click start game - don't allow starting a game without a player name
             after toast message the sumbit button becomes two buttons
@@ -108,3 +112,7 @@ a7 - tff
                     goes to screen with first set of questions, uses current player name, all othr values are cleared
                 click reset button
                     goes to home screen with all data reset 
+
+toastMessage += getString(R.string.salutation) + " " + playerName + ",\n";
+        toastMessage += getString(R.string.thanks) + "\n";
+        toastMessage += getString(R.string.youHave) + " " + score + " of 6 " + getString(R.string.correct) + " " + getString(R.string.answer);

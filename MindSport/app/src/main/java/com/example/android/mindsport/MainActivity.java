@@ -11,10 +11,13 @@ import android.widget.CheckBox;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.view.LayoutInflater;
+import android.content.res.Resources;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    //initialize vars
+    //initialize vars for score
     String playerName = "";
     String a1 = "";
     String a2 = "";
@@ -220,10 +223,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void createMessage(){
         toastMessage = "";
-        toastMessage += getString(R.string.salutation) + " " + playerName + ",\n";
-        toastMessage += getString(R.string.thanks) + "\n";
-        toastMessage += getString(R.string.youHave) + " " + score + " of 6 " + getString(R.string.correct) + " " + getString(R.string.answer);
+        Resources res = getResources();
+        if((double)score/6 >= .8) {
+           double tempScore = (double)score/6 * 100;
+           DecimalFormat df = new DecimalFormat("#.00");
+           String scorePerc = df.format(tempScore);
+            toastMessage = res.getString(R.string.goodScore, playerName, scorePerc);
+        }else {
+            toastMessage = res.getString(R.string.okScore, playerName, score);
+
+        }
     }
+
 
     private void displayToast(String message){
 
@@ -242,5 +253,6 @@ public class MainActivity extends AppCompatActivity {
         toast.setView(layout);
         toast.show();
     }
+
 
 }

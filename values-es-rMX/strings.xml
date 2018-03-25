@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">MINDSPORT</string>
+    <string name="q1">¿Qué juego de Shakespeare se conoce como el "Juego escocés"?</string>
+    <string name="q2">¿A quién le gusta (o no) huevos verdes y jamón?</string>
+    <string name="q3">¿Quién va al boticario y bebe un poco de veneno?</string>
+    <string name="q4">\'Ser o no ser ...\' ¿Qué es la obra?</string>
+    <string name="q5">¿Dónde se encontraron Lucy y Ricky?</string>
+    <string name="q6">Seleccione la declaración verdadera (s):</string>
+    <string name="q7">" Seleccione la (s) declaración (es) falsa (s):"</string>
+    <string name="pName">" NOMBRE DEL JUGADOR"</string>
+    <string name="aText">y la respuesta es... </string>
+    <string name="a4_1">"Otelo "</string>
+    <string name="a4_2">Macbeth</string>
+    <string name="a4_3">"Aldea "</string>
+    <string name="a4_4">"Romeo y Julieta "</string>
+    <string name="a5_1">"Iglesia "</string>
+    <string name="a5_3">"Cita a ciegas "</string>
+    <string name="a5_2">Dance Hall</string>
+    <string name="a5_4">"Fiesta en la playa "</string>
+    <string name="a6_1">Me encantan los sándwiches PB&amp;J</string>
+    <string name="a6_2">Los cachorros son los mejores!</string>
+    <string name="a6_3">"Star Trek es mejor que Star Wars. "</string>
+    <string name="a7_1">"La hierba es siempre mas verde. "</string>
+    <string name="a7_2">"La respuesta es 42. "</string>
+    <string name="a7_3">"Star Wars es mejor que Star Trek. "</string>
+    <string name="startGame">"EMPEZAR JUEGO "</string>
+    <string name="next">"SIGUIENTE "</string>
+    <string name="submit">ENVIAR</string>
+    <string name="startOver">"JUEGA DE NUEVO "</string>
+    <string name="gameOver">"JUEGO TERMINADO "</string>
+    <string name="salutation">Oye</string>
+    <string name="thanks">"¡Gracias por jugar! "</string>
+    <string name="goodScore">"¡Oye,% 1 $ s! Felicidades! % 2 $ s! ¡Gracias por jugar! "</string>
+    <string name="okScore">"Oye% 1 $ s, ese fue un esfuerzo valiente. Has puntuado% 2 $ d / 6. Mejor suerte la próxima vez. "</string>
+</resources>

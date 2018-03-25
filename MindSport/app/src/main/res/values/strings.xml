@@ -6,7 +6,7 @@
     <string name="contentDescription">mind exploding with ideas</string>
 
     //Question Strings
-    <string name="q1">Which Shakespeare play is better known as \'The Scottish Play\'?</string>
+    <string name="q1">Which Shakespeare play is known as the "Scottish Play"?</string>
     <string name="q2">Who likes (or not) green eggs and ham?</string>
     <string name="q3">Who goes to the apothecary and drinks some poison?</string>
     <string name="q4">\'To be or not to be...\' What is the play?</string>
@@ -43,15 +43,10 @@
     <string name="gameOver">GAME OVER</string>
 
     //Toast Message Strings
-    <string name="salutation">Hey</string>
-    <string name="thanks">Thanks for playing!</string>
+    <!--use when score is at or above 80%-->
+    <string name="goodScore">"Hey %1$s! Congrats! %2$s! Thank you for playing!</string>
 
     <!--use when score is below 80%-->
-    <string name="youHave">You have</string>
-    <string name="correct">correct</string>
-    <string name="answer">answers</string>
-
-    <!--use when score is 80% or higher-->
-    <string name="congats">Congrats!</string>
+    <string name="okScore">Hey %1$s, That was a valiant effort. You scored %2$d/6. Better luck next time.</string>
 
 </resources>
