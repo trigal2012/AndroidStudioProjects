@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/playAgain"
         android:onClick="onButtonClick"
-        style="@style/button"
+        style="@style/portraitBtn"
         android:text="@string/startOver"/>
 
 

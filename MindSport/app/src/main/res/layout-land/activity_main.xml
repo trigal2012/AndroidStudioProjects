@@ -12,50 +12,22 @@
 
     <TextView
         android:id="@+id/gameName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/title"
-        android:textSize="50sp"
-        android:layout_alignParentLeft="true"
-        android:background="@color/whiteish"
-        android:textColor="@color/colorAccent3"
-        android:textStyle="bold"/>
+        style="@style/landscapeTitle"/>
 
     <LinearLayout
         android:id="@+id/questions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        style="@style/landscapeLinearH">
 
         <EditText
             android:id="@+id/pname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="145dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            style="@style/editText"/>
+            style="@style/landscapeEdit"/>
     </LinearLayout>
 
 
     <Button
         android:id="@+id/start"
         android:onClick="onButtonClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:textSize="50sp"
         android:text="@string/startGame"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorAccentTrans3"
-        android:textColor="@color/white"/>
+        style="@style/landscapeBtn" />
 
 </RelativeLayout>

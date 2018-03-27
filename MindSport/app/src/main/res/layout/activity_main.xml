@@ -26,7 +26,7 @@
     <Button
         android:id="@+id/start"
         android:onClick="onButtonClick"
-        style="@style/button"
+        style="@style/portraitBtn"
         android:text="@string/startGame" />
 
 

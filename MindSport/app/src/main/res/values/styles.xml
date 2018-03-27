@@ -19,6 +19,42 @@
         <item name="android:text">@string/title</item>
     </style>
 
+    <style name="landscapeTitle" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:text">@string/title</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:background">@color/whiteish</item>
+        <item name="android:textColor">@color/colorAccent3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="landscapeLinearH" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="landscapeLinearV" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="linearLayout" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@id/gameName</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
     <style name="image" parent="Theme.AppCompat.CompactMenu">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -59,22 +95,13 @@
         <item name="android:layout_marginRight">16dp</item>
     </style>
 
-
     <style name="answerText" parent="answerFormat1">
         <item name="android:layout_marginBottom">16dp</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:hint">@string/aText</item>
     </style>
 
-
-    <style name="linearLayout" parent="Theme.AppCompat.CompactMenu">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_below">@id/gameName</item>
-        <item name="android:orientation">vertical</item>
-    </style>
-
-    <style name="button" parent="Theme.AppCompat.CompactMenu">
+    <style name="portraitBtn" parent="Theme.AppCompat.CompactMenu">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
@@ -84,6 +111,20 @@
         <item name="android:background">@color/colorAccentTrans3</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="landscapeBtn" parent="Theme.AppCompat.CompactMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/colorAccentTrans3</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="editText">
@@ -98,6 +139,14 @@
         <item name="android:gravity">center</item>
         <item name="android:hint">@string/pName</item>
         <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="landscapeEdit" parent="editText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">145dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
     </style>
 
 

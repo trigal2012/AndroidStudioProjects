@@ -12,31 +12,14 @@
 
     <TextView
         android:id="@+id/gameName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/whiteish"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/title"
-        android:textColor="@color/colorAccent3"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        style="@style/landscapeTitle"/>
 
     <LinearLayout
         android:id="@+id/questions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal">
+        style="@style/landscapeLinearH">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            style="@style/landscapeLinearV">
 
             <TextView
                 android:id="@+id/q7"
@@ -61,10 +44,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            style="@style/landscapeLinearV">
 
             <TextView
                 android:id="@+id/q6"
@@ -93,18 +73,8 @@
     <Button
         android:id="@+id/submit"
         android:onClick="onButtonClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@color/colorAccentTrans3"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:text="@string/submit"
-        android:textColor="@color/white"
-        android:textSize="50sp" />
+        style="@style/landscapeBtn"/>
 
 </RelativeLayout>
 

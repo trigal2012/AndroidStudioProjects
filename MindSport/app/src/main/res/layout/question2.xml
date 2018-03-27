@@ -77,6 +77,6 @@
     <Button
         android:id="@+id/next2"
         android:onClick="onButtonClick"
-        style="@style/button"
+        style="@style/portraitBtn"
         android:text="@string/next" />
 </RelativeLayout>
