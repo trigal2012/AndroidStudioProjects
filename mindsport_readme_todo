@@ -93,8 +93,10 @@ a7 - tff
 
 
         ---------bonus points-------------
-        -->fix up toast formatting - done
+        --> fix up toast formatting - done
         --> move findByid into Create method - not needed
+        --> add style details to style file for buttons in landscape view - done
+        --> add style details to style file for TextViews in landscape view - done
         --> add support for a 2nd language
         --> add dimensions file
         --> add "Share my score" feature
@@ -103,16 +105,4 @@ a7 - tff
             Specific Player results history
         --> add BEFORE button instead of just NEXT buttons
         --> load questions and answers from a data file
-        --> workflow additions
-            click start game - don't allow starting a game without a player name
-            after toast message the sumbit button becomes two buttons
-                    PLAY AGAIN
-                    RESET
-                click play again button
-                    goes to screen with first set of questions, uses current player name, all othr values are cleared
-                click reset button
-                    goes to home screen with all data reset 
 
-toastMessage += getString(R.string.salutation) + " " + playerName + ",\n";
-        toastMessage += getString(R.string.thanks) + "\n";
-        toastMessage += getString(R.string.youHave) + " " + score + " of 6 " + getString(R.string.correct) + " " + getString(R.string.answer);

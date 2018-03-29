@@ -235,7 +235,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     private void displayToast(String message){
 
         //get the LayoutInflater and inflate the custom_toast layout

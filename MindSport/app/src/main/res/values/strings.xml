@@ -44,7 +44,7 @@
 
     //Toast Message Strings
     <!--use when score is at or above 80%-->
-    <string name="goodScore">"Hey %1$s! Congrats! %2$s! Thank you for playing!</string>
+    <string name="goodScore">"Congrats %1$s! You scored %2$s%% Thank you for playing!</string>
 
     <!--use when score is below 80%-->
     <string name="okScore">Hey %1$s, That was a valiant effort. You scored %2$d/6. Better luck next time.</string>
